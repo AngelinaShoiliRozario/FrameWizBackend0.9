@@ -1,0 +1,213 @@
+<html lang="en">
+
+<head>
+    <title>Code-Editor</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/codemirror/codemirror.css">
+    <link rel="stylesheet" href="/assets/css/codemirror/show-hint.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/codemirror/index.css">
+    <style>
+        /* .cm-s-default .cm-qualifier {
+            color: #f59999;
+        } */
+
+        ul li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 20vh;background-color: #71467d;;">
+        <div>
+            <ul style="display: flex;justify-content: center; align-items: center;padding: 6px;">
+                <li class="imageUploadPreview" style="width: 400px;">
+                    <div class="avatar-upload" alt="Upload a image">
+
+                        <div class="avatar-preview" style="height:18vh;width: 400px;">
+                            <div id="imagePreview"
+                                style="background-image: url(https://th.bing.com/th/id/OIP.QI29d315w9fABt0BQCsIwwHaE8?pid=ImgDet&rs=1); ">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="avatar-edit">
+                        <input style="display: none;" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                        <label for="imageUpload" class="btn btn-primary">Upload Image</label>
+                    </div>
+                </li>
+                <li>
+                    <div style="padding:10px; height: 50px;">
+                        <input type="text" class="form-control" id="sectionName" placeholder="Name" required>
+                    </div>
+                </li>
+                <li class="optionBox">
+                    <select name="" id="selectOption" style="padding:10px;" required>
+                        <option value="null">Select Section Type</option>
+                        <option value="intro">Intro</option>
+                        <option value="about">About</option>
+                        <option value="text_block">Text Blocks</option>
+                        <option value="image_and_text">Image and Text</option>
+                        <option value="team">Team</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="contact_us">Contact us</option>
+                        <option value="gallery">Gallery</option>
+                        <option value="video">Video</option>
+                        <option value="events">Events</option>
+                        <option value="promotion">Promotion</option>
+                        <option value="plans">Plans</option>
+                        <option value="social">Social</option>
+                        <option value="full_page">Full Page</option>
+                        <option value="footer">Footer</option>
+                    </select>
+                </li>
+                <li class="nav-item dropdown bg-white">
+                    <a class="btn dropdown-toggle" type="button" data-toggle="dropdown">Options
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:autoFormatSelection()">Format</a></li>
+                        <li><a href="javascript:commentSelection(true)">Comment</a></li>
+                        <li><a href="javascript:commentSelection(false)">Uncomment</a></li>
+                    </ul>
+                </li>
+                <li><a class="btn btn-success" id="run-btn">Run</a></li>
+                <li>
+                    <button class="btn btn-primary" onclick="saveSection()">Save to database</button>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="alert alert-success " role="alert" id="msg" style="display: none;">
+        <div>Successfully Inserted data to the database</div>
+    </div>
+    <div class="alert alert-danger " role="alert" id="errmsg" style="display: none;">
+        <div>Unable to insert data to the database</div>
+    </div>
+
+
+
+
+    <div class="editor" style="height: 80vh;border: 1px solid red;">
+        <div id="resizeMe" class="code a">
+            <div class="html-code"></div>
+        </div>
+        <div id="previewBox" class="code pa">
+            <iframe id="preview-window"></iframe>
+        </div>
+    </div>
+</body>
+<script src="/assets/js/codemirror/codemirror.js"></script>
+<script src="/assets/js/codemirror/formatting.js"></script>
+<script src="/assets/js/codemirror/formatting.js"></script>
+<script src="/assets/js/codemirror/show-hint.js"></script>
+<script src="/assets/js/codemirror/xml-hint.js"></script>
+<script src="/assets/js/codemirror/html-hint.js"></script>
+<script src="/assets/js/codemirror/xml.js"></script>
+<script src="/assets/js/codemirror/javascript.js"></script>
+<script src="/assets/js/codemirror/css.js"></script>
+<script src="/assets/js/codemirror/htmlmixed.js"></script>
+<script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"
+    integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    Split(['.a', '.pa'])
+    var htmlEditor = CodeMirror(document.querySelector(".editor .code .html-code"), {
+        mode: "htmlmixed",
+        tabSize: 4,
+        lineNumbers: true,
+        extraKeys: { "Ctrl-Space": "autocomplete" }
+    });
+    CodeMirror.commands["selectAll"](htmlEditor);
+
+    function getSelectedRange() {
+        return { from: htmlEditor.getCursor(true), to: htmlEditor.getCursor(false) };
+    }
+
+    function autoFormatSelection() {
+        var range = getSelectedRange();
+        htmlEditor.autoFormatRange(range.from, range.to);
+    }
+
+    function commentSelection(isComment) {
+        var range = getSelectedRange(), selStart = htmlEditor.getCursor("start");
+        htmlEditor.commentRange(isComment, range.from, range.to);
+        htmlEditor.setSelection(selStart, htmlEditor.getCursor("end"));
+    }
+    document.querySelector("#run-btn").addEventListener("click", function () {
+        let htmlCode = htmlEditor.getValue();
+        let previewWindow = document.querySelector("#preview-window").contentWindow.document;
+        previewWindow.open();
+        previewWindow.write(htmlCode);
+        previewWindow.close();
+    });
+
+    const saveSection = () => {
+        let htmlCode = htmlEditor.getValue();
+        let sectionType = document.querySelector('#selectOption').value;
+        let sectionName = document.querySelector('#sectionName').value;
+        let image = document.querySelector('#imageUpload').files[0];
+
+        // Create a FormData object and append the data
+        var formData = new FormData();
+        formData.append('htmlCode', htmlCode);
+        formData.append('sectionType', sectionType);
+        formData.append('sectionName', sectionName);
+        formData.append('image', image);
+
+
+        // formData.append('image', image);
+        axios.post('http://localhost:3000/sections/post', formData, {
+            'contentType': 'multipart/form-data'
+        })
+            .then(response => {
+                console.log('Response from server:', response.data);
+                if (response.data.succ) {
+                    document.getElementById('msg').style.display = "";
+                    document.getElementById('errmsg').style.display = "none";
+                } else {
+                    document.getElementById('msg').style.display = "none";
+                    document.getElementById('errmsg').style.display = "";
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+                document.getElementById('msg').style.display = "none";
+                document.getElementById('errmsg').style.display = "";
+
+            });
+    };
+</script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function () {
+        readURL(this);
+    });
+
+
+
+
+</script>
+
+</html>
