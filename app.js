@@ -16,7 +16,7 @@ const connectDB = require('./config/db');
 app.use(express.static('public'));
 app.use(express.static('assets'));
 const corsOptions = {
-  origin: ['http://localhost/', 'https://localhost/pagebuilderztrios'],
+  origin: ['https://phpstack-858192-4120901.cloudwaysapps.com/', 'https://phpstack-858192-4120901.cloudwaysapps.com/pagebuilderztrios'],
 };
 app.use(cors({corsOptions}));
 
