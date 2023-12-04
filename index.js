@@ -12,6 +12,7 @@ const fs = require('fs');
 
 const key = fs.readFileSync('private.key');
 const cert = fs.readFileSync('certificate.crt');
+let ca = fs.readFileSync('ca_bundle.crt');
 
 const Goal = require("./models/goalModel");
 
@@ -21,7 +22,7 @@ const connectDB = require('./config/db');
 
 const cred = {
   key,
-  cert
+  cert, ca
 
 }
 
