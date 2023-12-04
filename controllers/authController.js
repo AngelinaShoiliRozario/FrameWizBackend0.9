@@ -273,7 +273,7 @@ const postLocation = async (req, res) => {
 
 const dashboard = async (req, res) => {
   let {user_id} = req.params;
-  res.redirect(`https://phpstack-858192-4120901.cloudwaysapps.com/pagebuilderztrios/views/pages.html?u=${user_id}`);
+  res.redirect(`https://phpstack-858192-4120901.cloudwaysapps.com/views/pages.html?u=${user_id}`);
 };
 
 const login = async (req, res) => {
