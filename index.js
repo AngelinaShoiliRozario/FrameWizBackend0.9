@@ -69,7 +69,7 @@ app.use(session({
 app.use(flash());
 
 app.get('/', (req, res) => {
-  res.sendFile("index.html", {root: __dirname});
+  res.redirect('/auth');
 });
 
 // app.get('/contact', (req, res) => {
