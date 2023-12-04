@@ -39,7 +39,7 @@ async function createUserTemplateInformation(req, res) {
       const newDocument = await userTemplateInfoModel.create(data);
       console.log("New document created:", newDocument);
     }
-    const redirectUrl = `https://phpstack-858192-4120901.cloudwaysapps.com/pagebuilderztrios/basic_client_editor.html?userId=${user_id}&templateId=${template_id}&media=${directory}`;
+    const redirectUrl = `https://phpstack-858192-4120901.cloudwaysapps.com/basic_client_editor.html?userId=${user_id}&templateId=${template_id}&media=${directory}`;
 
    
     res.send({success: true, redirectUrl: redirectUrl });
