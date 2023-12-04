@@ -6,12 +6,24 @@ const port = process.env.PORT || 5000;
 const cors = require('cors');
 const session = require('express-session'); 
 const flash = require('connect-flash'); 
+const https = require('https');
+const path = require('path');
+const fs = require('fs');
+
+const key = fs.readFileSync('private.key');
+const cert = fs.readFileSync('certificate.crt');
 
 const Goal = require("./models/goalModel");
 
 // const buttonRoutes = require("./routes/buttonRoutes");
 const connectDB = require('./config/db');
 // const buttonModel = require("./models/buttonModel");
+
+const cred = {
+  key,
+  cert
+
+}
 
 app.use(express.static('public'));
 app.use(express.static('assets'));
@@ -107,7 +119,9 @@ app.use('/user',require('./routes/userRoutes'));
 // });
 // app.use("/", buttonRoutes); // GET all products
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
 
+const httpsServer = https.createServer(cred, app)
+httpsServer.listen(8443);
