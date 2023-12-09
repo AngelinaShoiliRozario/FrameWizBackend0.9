@@ -196,6 +196,9 @@
         table.dataTable thead>tr>td.sorting_desc,
         table.dataTable thead>tr>td.sorting_asc_disabled,
         table.dataTable thead>tr>td.sorting_desc_disabled {} */
+        .dataTables_scrollHeadInner,table {
+            width: 100%!important;
+        }
     </style>
 </head>
 
@@ -327,7 +330,7 @@
     <div class="d-flex">
 
         <!-- left sidebar  start -->
-        <div id="m-left-sidebar" style="background: #3D3D3D; width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
+        <div id="m-left-sidebar" style="background: #3D3D3D; min-width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
 
             <div class="mb-3 pt-4" style="margin-right:20px;">
                 <div class="d-flex justify-content-around">
@@ -527,7 +530,7 @@
 
 
         <!-- right  part start -->
-        <div class="p-4" style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
+        <div class="p-4" style="background: #EAEAEA;flex:1; height: 92vh!important;overflow-y: scroll;overflow-x: hidden;">
 
 
             <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
