@@ -250,7 +250,7 @@ const postEditProduct = async (req, res) =>{
   }
   else{
     // let varient_combinations = req.body.varient_combinations
-    JSON.parse(req.body.varient_combinations);
+    varient_combinations = JSON.parse(varient_combinations);
   }
 
   // let varient_combinations = req.body.varient_combinations
