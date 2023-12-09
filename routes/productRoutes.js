@@ -1,5 +1,5 @@
 const express = require('express');
-const { productCategory,addProductView,orderListView, productListView,createProduct,getProductByUserId_TemplateId } = require('../controllers/productController');
+const { productCategory,addProductView,orderListView,editProductView, productListView,createProduct,getProductByUserId_TemplateId,postEditProduct } = require('../controllers/productController');
 const router = express.Router();
 const uploadIMG = require('../config/img_up_multer');
 
