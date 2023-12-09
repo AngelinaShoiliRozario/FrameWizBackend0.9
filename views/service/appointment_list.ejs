@@ -180,6 +180,9 @@
         table[aria-describedby="example_info"] tfoot {
             /* display: none; */
         }
+        .dataTables_scrollHeadInner,table {
+            width: 100%!important;
+        }
     </style>
 
 
@@ -346,7 +349,7 @@
 
         <!-- left sidebar  start -->
         <div id="m-left-sidebar"
-            style="background: #3D3D3D; width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
+            style="background: #3D3D3D; min-width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
 
             <div class="mb-3 pt-4" style="margin-right:20px;">
                 <div class="d-flex justify-content-around">
@@ -604,7 +607,7 @@
 
         <!-- right  part start -->
         <div class="p-4"
-            style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
+            style="background: #EAEAEA;flex:1; height: 92vh!important;overflow-y: scroll;overflow-x: hidden;">
 
 
             <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
@@ -977,37 +980,67 @@
     <script src="/assets/js/others/fontawesome_min.js"></script>
 
 
-    <!-- append filter with icon tag  inside the built in table paragraph-->
-    <script>
-        // Add custom elements next to the "Show" dropdown
+   <!-- append filter with icon tag  inside the built in table paragraph-->
+   <script>
+    // Find the parent div by its ID
+    var example_length = document.querySelector("#example_length");
+
+    if (example_length) {
+
+        // Create a nexample_lengthew i tag
         var spanTag = document.createElement("span");
         spanTag.classList = "ms-4 mt-1";
+
+
         var iTag = document.createElement("i");
+
         iTag.className = "fas fa-filter";
         var spanTag2 = document.createElement('span');
         spanTag2.classList = "ms-2 mt-1"
         spanTag2.innerHTML = "Filter";
+
         spanTag.appendChild(iTag);
-        spanTag.appendChild(spanTag2);
-        var customElement = spanTag;
-        $('.dataTables_length').append(customElement);
+
+        let spanTag3 = document.createElement("span");
+        let button = document.createElement("button");
+
+        
+        button.style.color = '#2871FF';
+        button.style.borderRadius = '10px';
+        button.style.border = 'none';
+        button.style.padding = '0.5em 1em';
+        
+  
+        button.style.marginBottom = '';
+        button.style.marginLeft = 'auto';
 
 
 
-        var customElement2 = '<button class="customButton2 btn btn-primary">Create Appointment</button>'; //create appointment button
-        var secondele = $('#example_wrapper').find('.row:nth-child(1)').find('.col-sm-12:nth-child(2)');; //getting the place
-        secondele.append(customElement2)
-        $('.customButton2').css({
-            display: 'block',
-            width: "200px",
-            marginLeft: 'auto',
-        })
-        $('.customButton2').on('click', function () {
-            console.log('Custom button clicked');
-            // $('#cartModal').modal('hide'); // Hide the first modal
-            // $('#proceedModal').modal('show'); // Show the second modal
-        });
-    </script>
+
+        // spanTag3.classList = 'ms-5';
+        spanTag3.style.marginLeft = "auto";
+        spanTag3.style.paddingLeft = "0px";
+
+
+
+
+        button.innerText = "Add to Cart";
+        // spanTag3.appendChild(button);
+        let btn_p =  document.getElementById('example_filter').parentNode;
+        btn_p.style.display = "flex";
+        btn_p.style.justifyContent = "end";
+        btn_p.append(button);
+
+
+
+        example_length.appendChild(spanTag);
+        example_length.appendChild(spanTag2);
+        example_length.appendChild(spanTag3);
+    }
+
+
+    console.log(example_length);
+</script>
 
 </body>
 
