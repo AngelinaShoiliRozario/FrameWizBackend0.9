@@ -151,11 +151,182 @@ const getProductByUserId_TemplateId = async (req, res) => {
   res.send(products);
 };
 
+// Edit single product 
+const editProductView = async (req, res) => {
+  let user_id = req.params.user_id;
+  let template_id = req.params.template_id;
+  let product_id = req.params.product_id;
+  const category_table = `product_category_table_of_user_${user_id}_template_${template_id}`;
+  const product_table = `product_table_of_user_${user_id}_template_${template_id}`;
+  const collection1 = mongoose.connection.collection(category_table);
+  const collection2 = mongoose.connection.collection(product_table);
+  let categories = await collection1.find({
+    user_id: user_id,
+    template_id: template_id,
+  });
+  categories = await categories.toArray();
+  const product = await collection2.findOne({
+   _id: new ObjectId(product_id),
+  });
+
+  
+  res.render("product/edit_product", { user_id, template_id, product_id ,categories, product});
+};
+// Post Edited product
+const postEditProduct = async (req, res) =>{
+
+  let user_id = req.params.user_id;
+  let template_id = req.params.template_id;
+  let product_id = req.params.product_id;
+
+  const category_table = `product_category_table_of_user_${user_id}_template_${template_id}`;
+  const product_table = `product_table_of_user_${user_id}_template_${template_id}`;
+
+  const collection1 = mongoose.connection.collection(category_table);
+  const collection2 = mongoose.connection.collection(product_table);
+  const product = await collection2.findOne({
+    _id: new ObjectId(product_id),
+   });
+  
+   let primaryImagePath;
+  if(req.files["primary_image"] != undefined){
+    const primaryImage = req.files["primary_image"][0];
+    primaryImagePath = primaryImage.path
+    .replace(/\\/g, "/")
+    .replace("public", "");
+  }
+  else{
+    primaryImagePath = product.primary_image;
+  }
+  let secondaryImagePaths =[];
+  const storeImgUrl = req.body.storeImgUrl;
+  if (req.files["secondary_images"] != undefined || storeImgUrl != undefined) {
+    const secondaryImages = req.files["secondary_images"];
+    
+    if (secondaryImages) {
+      secondaryImagePaths = secondaryImages.map((image) =>
+      image.path.replace(/\\/g, "/").replace("public", "")
+      );
+    }
+    if (storeImgUrl) {
+      let imageUrlArray = JSON.parse(storeImgUrl);
+      let filteredArr_2 = product.secondary_images.filter(item => !imageUrlArray.includes(item));
+      for (let i = 0; i < filteredArr_2.length; i++) {
+        secondaryImagePaths.push(filteredArr_2[i])
+        
+      }
+    }
+  }
+  else{
+    secondaryImagePaths = product.secondary_images;
+  }
+  
+
+
+
+
+  let {
+    product_name,
+    product_category,
+    buying_price,
+    selling_price,
+    discount,
+    discount_expire_date,
+    varient_labels,
+    quantitys,
+    product_description,
+    product_additional_information,
+    attributes_title,
+    attribute_value,
+  } = req.body;
+
+  if (varient_labels == undefined) {
+    varient_labels = product.varient_labels
+  }
+  let varient_combinations = req.body.varient_combinations
+  console.log("find the varient === ", varient_labels, product.varient_labels, product.varient_combinations, "==", varient_combinations);
+  if (varient_combinations == '') {
+    varient_combinations = product.varient_combinations
+  }
+  else{
+    // let varient_combinations = req.body.varient_combinations
+    JSON.parse(req.body.varient_combinations);
+  }
+
+  // let varient_combinations = req.body.varient_combinations
+  //   ? JSON.parse(req.body.varient_combinations)
+  //   : "";
+  let attributes = [];
+  for (let i = 0; i < attributes_title.length; i++) {
+    if (attributes_title[i] != "" && attribute_value[i] != "") {
+      let da = [attributes_title[i], attribute_value[i]];
+      attributes.push(da);
+    }
+  }
+
+
+  const existingCategory = await collection1.findOne({
+    user_id: user_id,
+    name: product_category,
+    template_id: template_id,
+  });
+
+  
+  let categoryId;
+  if (existingCategory != null) {
+    categoryId = existingCategory._id;
+  } else {
+    const cate_data = {
+      name: product_category,
+      user_id: user_id,
+      template_id: template_id,
+      created_at: new Date(),
+      updated_at: new Date(),
+    };
+    let category_n = await collection1.insertOne(cate_data);
+    console.log("new category newly created");
+    categoryId = category_n.insertedId;
+  } 
+let data= {
+  user_id: user_id,
+  template_id: template_id,
+  product_name: product_name,
+  category_id: categoryId,
+  buying_price: buying_price,
+  selling_price: selling_price,
+  discount: discount,
+  discount_expire_date: discount_expire_date,
+  varient_labels: varient_labels,
+  varient_combinations: varient_combinations,
+  quantitys: quantitys,
+  product_description: product_description,
+  product_additional_information: product_additional_information,
+  attributes: attributes,
+  primary_image: primaryImagePath,
+  secondary_images: secondaryImagePaths,
+};
+console.log("data", data);
+
+  const objectId = new ObjectId(product_id);
+
+  const result = await collection2.updateOne(
+    { _id: objectId },
+    { $set:data }
+  );
+
+  console.log("result = ", result.acknowledged);
+  if (result.acknowledged == true) {
+    res.redirect(`/inventory/${user_id}/${template_id}/product_list`);
+  }
+}
+
 module.exports = {
   addProductView,
   orderListView,
   productListView,
   createProduct,
   getProductByUserId_TemplateId,
-  productCategory
+  productCategory,
+  editProductView,
+  postEditProduct
 };

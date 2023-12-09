@@ -21,6 +21,12 @@ router.get('/:user_id/:template_id/product_category', productCategory);
 router.get('/:user_id/:template_id/order_list', orderListView); 
 router.get('/:user_id/:template_id/product_list', productListView); 
 
+router.get('/:user_id/:template_id/edit_product/:product_id', editProductView);  
+router.post('/:user_id/:template_id/edit_product/:product_id',upload.fields([ 
+  { name: 'primary_image', maxCount: 1 }, 
+  { name: 'secondary_images', maxCount: 5 }  
+]), postEditProduct);
+
 
 module.exports = router;
  
