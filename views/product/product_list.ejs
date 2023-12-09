@@ -652,12 +652,12 @@
                                 </td>
                                 <td><%= product.selling_price %> TK</td>
                                 <td >
+                                    <div style="">
                                     <% for(let i=0; i<product.varient_combinations.length ;i++ ) {%>
-                                        <div style="text-align: left;">
                                             <span><b><%= product.varient_combinations[i] %></b>:</span>
-                                            <span><%= product.quantitys[i] %></span>
+                                            <div><%= product.quantitys[i] %></div>
+                                            <% };%>
                                         </div>
-                                    <% };%>
                                 </td>
                                 <td>
                                     <%= product.product_description %>
