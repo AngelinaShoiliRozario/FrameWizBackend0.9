@@ -1017,12 +1017,14 @@
     <script src="/assets/js/others/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/others/fontawesome_min.js"></script>
 
-
+    <!-- append filter with icon tag  inside the built in table paragraph-->
     <script>
+        // Find the parent div by its ID
         var example_length = document.querySelector("#example_length");
 
         if (example_length) {
 
+            // Create a nexample_lengthew i tag
             var spanTag = document.createElement("span");
             spanTag.classList = "ms-4 mt-1";
 
@@ -1038,20 +1040,35 @@
 
             let spanTag3 = document.createElement("span");
             let button = document.createElement("button");
-            button.style.padding = '7px 20px';
-            button.style.background = '#2871FF';
-            button.style.color = 'white';
+ 
+            
+            button.style.color = '#2871FF';
             button.style.borderRadius = '10px';
             button.style.border = 'none';
-            button.style.height = '50px';
-            button.style.width = '150px';
-            button.style.marginBottom = '13px';
+            button.style.padding = '0.5em 1em';
+            
+      
+            button.style.marginBottom = '';
+            button.style.marginLeft = 'auto';
 
-            spanTag3.style.marginLeft = "1040px";
+
+
+
+            // spanTag3.classList = 'ms-5';
+            spanTag3.style.marginLeft = "auto";
             spanTag3.style.paddingLeft = "0px";
 
+
+
+
             button.innerText = "Add to Cart";
-            spanTag3.appendChild(button);
+            // spanTag3.appendChild(button);
+            let btn_p =  document.getElementById('example_filter').parentNode;
+            btn_p.style.display = "flex";
+            btn_p.style.justifyContent = "end";
+            btn_p.append(button);
+
+
 
             example_length.appendChild(spanTag);
             example_length.appendChild(spanTag2);
@@ -1061,6 +1078,8 @@
 
         console.log(example_length);
     </script>
+
+    
 
     <script>
 
