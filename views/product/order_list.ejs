@@ -189,6 +189,9 @@
         table[aria-describedby="example_info"] tfoot {
             /* display: none; */
         }
+        .dataTables_scrollHeadInner,table {
+            width: 100%!important;
+        }
     </style>
 </head>
 
@@ -321,7 +324,7 @@
 
     <!-- left sidebar  start -->
     <div id="m-left-sidebar" 
-    style="background: #3D3D3D; width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
+    style="background: #3D3D3D; min-width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
 
     <div class="mb-3 pt-4" style="margin-right:20px;">
         <div class="d-flex justify-content-around">
@@ -573,7 +576,7 @@
 
 
         <!-- right  part start -->
-        <div class="p-4" style="border: 2px solid transparent; background: #EAEAEA; width: 1700px; height: 100vh!important;">
+        <div class="p-4" style="background: #EAEAEA;flex:1; height: 92vh!important;overflow-y: scroll;overflow-x: hidden;">
 
 
             <div class="p-4" style="border-radius: 10px;  background: #FAFAFA;">
@@ -895,6 +898,7 @@
             var spanTag = document.createElement("span");
             spanTag.classList = "ms-4 mt-1";
 
+
             var iTag = document.createElement("i");
 
             iTag.className = "fas fa-filter";
@@ -906,28 +910,45 @@
 
             let spanTag3 = document.createElement("span");
             let button = document.createElement("button");
-            button.style.padding = '7px 20px';
-            button.style.background = '#2871FF';
-            button.style.color = 'white';
+ 
+            
+            button.style.color = '#2871FF';
             button.style.borderRadius = '10px';
             button.style.border = 'none';
-            button.style.height = '50px';
-            button.style.width = '150px';
-            button.style.marginBottom = '13px';
+            button.style.padding = '0.5em 1em';
+            
+      
+            button.style.marginBottom = '';
+            button.style.marginLeft = 'auto';
+
+
+
 
             // spanTag3.classList = 'ms-5';
-            spanTag3.style.marginLeft = "1040px";
+            spanTag3.style.marginLeft = "auto";
             spanTag3.style.paddingLeft = "0px";
 
+
+
+
             button.innerText = "Add to Cart";
-            spanTag3.appendChild(button);
+            // spanTag3.appendChild(button);
+            let btn_p =  document.getElementById('example_filter').parentNode;
+            btn_p.style.display = "flex";
+            btn_p.style.justifyContent = "end";
+            btn_p.append(button);
+
+
 
             example_length.appendChild(spanTag);
             example_length.appendChild(spanTag2);
             example_length.appendChild(spanTag3);
         }
+
+
         console.log(example_length);
     </script>
+
 
 
 
