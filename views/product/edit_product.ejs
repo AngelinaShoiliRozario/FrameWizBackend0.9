@@ -825,7 +825,7 @@
                                                                 <div class="secondary-img-container"
                                                                     id="secondary-img-container">
                                                                     <% product.secondary_images != '' ? product.secondary_images.forEach(item =>{%>
-                                                                     <div class="position-relative" id="secondary_img_preview_0" style="width: 90px; height: 90px; margin-right: 8px; margin-bottom: 8px; background: url('<%= item %> ')0% 0% / cover;">
+                                                                     <div class="position-relative" id="secondary_img_preview_0" style="width: 90px; height: 90px; margin-right: 8px; margin-bottom: 8px; background: url(<%= item %> )0% 0% / cover;">
                                                                         <span class="position-absolute" onclick="removeSecondaryImg(this)" style="top: 0px; right: 0px; cursor: pointer;"><i class="fa-solid fa-circle-xmark" style="font-size:30px;color:white;border:1px solid skyblue;border-radius:50%;"></i></span>
                                                                      </div>
                                                                      <%  }) : "" %>
@@ -1135,7 +1135,7 @@
                                                                <% if (product.varient_labels != undefined ) { 
                                                                    product.varient_labels.forEach((item,index) =>{ %>
                                                                      <th class="varient_table_label"
-                                                                  style="border-top-left-radius: '<%= index==0 ? 10 : 0 %>'px"><%= item %></th>
+                                                                  style="border-top-left-radius: <%= index==0 ? 10 : 0%>px"><%= item %></th>
                                                                   <% }) } else { %>
                                                                   <th class="varient_table_label"
                                                                     style="border-top-left-radius: 10px">----</th>
