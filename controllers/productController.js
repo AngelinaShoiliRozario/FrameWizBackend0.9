@@ -324,11 +324,10 @@ const deleteProduct = async (req, res) => {
 
   const productObjectId = new ObjectId(product_id);
 
-
   let product_collection = `product_table_of_user_${user_id}_template_${template_id}`;
   const product_table = mongoose.connection.collection(product_collection);
 
-  let delete_one_record_from_productTable = await product_table.deleteOne({ _id: serviceObjectId });
+  let delete_one_record_from_productTable = await product_table.deleteOne({ _id: productObjectId });
 
   try {
 
