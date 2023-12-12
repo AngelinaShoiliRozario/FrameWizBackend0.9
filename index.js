@@ -37,25 +37,7 @@ app.use(cors({corsOptions}));
 
 connectDB();
 
-// app.get('/getGoals',async (req, res, next) => {
-//   try{
-//     const goals = await Goal.find({});
-//     res.json( goals);
-//   }catch(err){
-//     res.json({'error': err});
-//   }
-// })
-// app.post('/setGoals',async (req, res, next) => {
-//   try{
-//       const m = await Goal.create({
-//         name: "shoili"
-//       });
-//       res.json(m);    
-//   }catch(err){
-//     res.json({'error': err});
-//   }
-// })
-
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 app.use(express.json());
@@ -68,6 +50,12 @@ app.use(session({
 }));
 
 app.use(flash());
+// Middleware to pass req to all EJS templates
+app.use((req, res, next) => {
+  res.locals.req = req;
+  res.locals.__dirname = __dirname; //for passing values to ejs from here
+  next();
+});
 
 app.get('/', (req, res) => {
   res.redirect('/auth');

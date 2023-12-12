@@ -25,335 +25,11 @@
 
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
-
-    <!-- Mimi css -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        /* search button in nav css */
-        .search-container {
-            width: 300px;
-
-        }
-
-        .my-form-control {
-            background-color: #EBEBEB;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-            width: 100% !important;
-        }
-
-        .form-control-custom {
-            outline: none;
-            border: none;
-            color: #242945;
-            background-color: #EBEBEB;
-            border-radius: 5px;
-            font-size: 14px;
-            /* padding: 0 8px 5px 8px; */
-            width: 100%;
-            -webkit-transition: all ease 0.5s;
-            transition: all ease 0.5s;
-            margin-top: 7px;
-            padding: 10px;
-
-        }
-
-        input#search-bar {
-            /* margin: 0 auto; */
-            /* width: 100%;
-            height: 45px;
-            padding: 0 10px !important;
-            font-size: 1rem;
-            border: 1px solid #D0CFCE;
-            outline: none; */
-        }
-
-        input#search-bar:focus {
-            border: 1px solid #008ABF;
-            transition: 0.35s ease;
-            color: #008ABF;
-        }
-
-        input#search-bar:focus::-webkit-input-placeholder {
-            transition: opacity 0.45s ease;
-            opacity: 0;
-        }
-
-        input#search-bar:focus::-moz-placeholder {
-            transition: opacity 0.45s ease;
-            opacity: 0;
-        }
-
-        input#search-bar:focus:-ms-placeholder {
-            transition: opacity 0.45s ease;
-            opacity: 0;
-        }
-
-
-
-        /* checking input css */
-        .checking_input:checked~.pa_list {
-            background: #5F5F5F;
-
-        }
-
-        .ch_list {
-            display: none;
-        }
-
-        .move_icon {
-            transform: rotate(180deg);
-        }
-
-        /* checking input css */
-        .checking_input:checked~.ch_list {
-            display: block;
-        }
-
-        .checking_input:checked~.pa_list .move_icon {
-
-            transform: rotate(0deg);
-        }
-
-        .yy:hover {
-            background: #5F5F5F;
-        }
-
-
-        #example_filter {
-            display: none;
-        }
-    </style>
-
-    <style>
-        #example_length {
-            /* border: 2px solid red !important; */
-            display: flex;
-            /* justify-content: space-around; */
-        }
-
-
-        #example {
-            margin-top: 20px !important;
-
-
-        }
-
-
-        .txtt {
-            font-size: 14px;
-        }
-    </style>
-
-
-    <!-- omar css -->
-    <style id="omarInventory">
-        #productInformation div h3,
-        #ProductVariant div h3,
-        .newVariantTable div h3,
-        #table_content_container div h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        /* .s-i-c-2 label {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90px;
-            width: 90px;
-            background-color: #F0F0F0;
-        }
-
-        .s-i-c-2 label i {
-            color: black;
-            font-size: 40px;
-        } */
-
-
-
-        .colorVariantBox .colorInputUL {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 5px 5px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #EBEBEB;
-        }
-
-        .colorVariantBox .colorInputUL input {
-            flex: 1;
-            padding: 5px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            background-color: #EBEBEB;
-        }
-
-        .colorVariantBox .colorInputUL li {
-            color: #333;
-            margin: 2px 2px;
-            list-style: none;
-            border-radius: 5px;
-            background: white;
-            padding: 2px 5px 2px 5px;
-            border: 1px solid #e3e1e1;
-        }
-
-        .colorVariantBox .colorInputUL li i {
-            color: #407BFF;
-            font-size: 12px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .populateBtn span {
-            background-color: #8723c14d;
-            /* color: #8723c1; */
-            color: #8723c1d8;
-
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        .populateBtn span:hover {
-            background-color: #8723c1;
-            color: #fff;
-            padding: 10px 15px;
-        }
-
-        .newVariantTable p {
-            font-size: 16px;
-            font-family: "Gill Sans", sans-serif;
-        }
-
-        .tableHead {
-            background-color: #3D3D3D;
-            color: white;
-            text-align: center
-        }
-
-        .tableHead tr th {
-            box-sizing: border-box;
-            box-shadow: 0 1px 1px 1px white;
-        }
-
-        .tableBody {
-            text-align: center;
-            background-color: white;
-            color: #3D3D3D;
-            font-weight: 700;
-        }
-
-        .tableBody td {
-            padding: 20px 0;
-            box-sizing: border-box;
-            box-shadow: 0 -1px 1px 1px #c7c7c7
-        }
-
-        .tableBody td .myInput {
-            color: #3D3D3D;
-            font-weight: 700;
-            text-align: center;
-            border: none;
-            outline: none;
-            width: 95%;
-        }
-
-        #table_content_container label {
-            font-weight: 700;
-        }
-
-        .table_content-Add span {
-            font-size: 20px;
-            font-weight: 700;
-            color: rgb(14, 168, 14);
-        }
-
-        .table_content-delete .delete-content-icon,
-        .table_content-Add .add-content-icon {
-            background-color: white;
-        }
-
-        .table_content-Add .add-content-icon:hover {
-            background-color: rgba(148, 245, 148, 0.301);
-        }
-
-        .table_content-delete .delete-content-icon:hover {
-            background-color: rgba(238, 82, 82, 0.356)
-        }
-
-        .productName input:focus {
-            background-color: #EBEBEB;
-        }
-
-        /* .category .form-control-product, .productName .form-control-product, .Description .form-control-product {
-
-   color: #242945;
-   background-color: #EBEBEB;
-   border-radius: 5px;
-   font-size: 14px;
-   padding: 8px 15px;
-   width: 100%;
-   -webkit-transition: all ease 0.5s;
-   transition: all ease 0.5s;
- } */
-    </style>
-    <style>
-        /* .tableHead {
-            background-color: #0071bc;
-            color: white;
-            text-align: center
-        } */
-
-        /* .tableBody {
-            border-bottom: 1px solid #8723c1;
-            text-align: center
-        } */
-
-        /* .tableBody td {
-            padding: 20px 0;
-            border: 1px solid black;
-        } */
-
-        /* .myInput {
-            text-align: center;
-            border: none;
-            outline: none;
-            width: 100%;
-        } */
-
-        .myInput:focus {
-            border: none;
-            /* border-bottom: 0.3px solid red !important; */
-        }
-
-        .image_2nd_upload_label::after {
-            top: 17px !important;
-        }
-
-        .select2-selection--multiple {
-            padding-top: 8px !important;
-            min-height: 50px !important;
-        }
-    </style>
-
+        <link rel="stylesheet" href="/assets/css/others/custom-style.css">
 
 </head>
 
-<body >
+<body>
 
 
     <!-- navbar start -->
@@ -491,397 +167,152 @@
 
     <div class="d-flex">
 
-         <!-- left sidebar  start -->
-         <div id="m-left-sidebar" 
-         style="background: #3D3D3D; width: 300px; height: 100vh!important; border:2px solid black ;color: white; position: sticky;">
+        <!-- left sidebar  start -->
+        <%- include('../reuseable/left_sidebar', { user_id: user_id, template_id: template_id }) %>
 
-         <div class="mb-3 pt-4" style="margin-right:20px;">
-             <div class="d-flex justify-content-around">
-                 <span>Lets's set up your store</span>
-
-                 <span class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path
-                             d="M0.0597032 10.052L5.1417 5.058L0.0597032 0.064H3.2277L8.2877 5.058L3.2277 10.052H0.0597032Z"
-                             fill="#C9D2D7" />
-                     </svg>
-                 </span>
-             </div>
-
-             <span class="dropdown">
-                 <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#">1</a></li>
-                     <li><a class="dropdown-item" href="#">2</a></li>
-                     <li><a class="dropdown-item" href="#">3</a></li>
-                 </ul>
-             </span>
-         </div>
-
-         <div class="mb-3 ps-5"
-             style="background: #d9d9d9; height: 3px; width: 100%; border-radius: 15px; position: relative">
-             <div
-                 style="background-color:#60B2FF ;height: 4px; width: 25%; border-radius: 15px; position: absolute; top: -1px;left:0;">
-             </div>
-         </div>
-
-         <div class="mb-3" style="margin-left:21px;">
-             1/7 Completed
-         </div>
-
-         <div class="mb-3" style="background-color: white; height: 1px; width: 100%;"></div>
-
-         <div class="mt-2">
-
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <span> <svg class="me-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M11.8889 5.66667L7.6622 9.89336C7.50819 10.0474 7.43119 10.1244 7.3424 10.1532C7.26429 10.1786 7.18015 10.1786 7.10205 10.1532C7.01325 10.1244 6.93625 10.0474 6.78224 9.89336L5.32887 8.43998C5.17486 8.28597 5.09786 8.20897 5.00906 8.18012C4.93096 8.15474 4.84682 8.15474 4.76872 8.18012C4.67992 8.20897 4.60292 8.28597 4.44891 8.43998L1 11.8889M11.8889 5.66667H8.77778M11.8889 5.66667V8.77778M4.73333 15H11.2667C12.5735 15 13.2269 15 13.726 14.7457C14.165 14.522 14.522 14.165 14.7457 13.726C15 13.2269 15 12.5735 15 11.2667V4.73333C15 3.42654 15 2.77315 14.7457 2.27402C14.522 1.83498 14.165 1.47802 13.726 1.25432C13.2269 1 12.5735 1 11.2667 1H4.73333C3.42654 1 2.77315 1 2.27402 1.25432C1.83498 1.47802 1.47802 1.83498 1.25432 2.27402C1 2.77315 1 3.42654 1 4.73333V11.2667C1 12.5735 1 13.2269 1.25432 13.726C1.47802 14.165 1.83498 14.522 2.27402 14.7457C2.77315 15 3.42654 15 4.73333 15Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>Dashboard</span>
-                 </div>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <a href="/user/sitelist/<%=user_id%>/<%=template_id%>" style="text-decoration: none;color: white;">
-                         <svg class="me-2" width="17" height="17" viewBox="0 0 17 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path d="M12.1943 14.4787V12.2109L14.6367 12.2116" fill="#C9D2D7" />
-                             <path
-                                 d="M12.1943 12.2109V14.4787L14.6367 12.2116L12.1943 12.2109ZM12.1943 12.2109L15.2473 15.2639"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                 d="M2 8.01561C2 7.64008 2.03451 7.27261 2.10053 6.9162H4.27141C4.23084 7.27311 4.20658 7.63299 4.19904 7.99479C4.19875 8.00867 4.19875 8.02256 4.19904 8.03644C4.20658 8.39824 4.23084 8.75812 4.27141 9.11503H2.10053C2.03451 8.75862 2 8.39115 2 8.01561ZM4.67783 4.9162H2.86182C3.52328 3.8224 4.52429 2.95691 5.71875 2.46582C5.27951 3.24079 4.93036 4.06303 4.67783 4.9162ZM6.78279 4.9162C7.08097 4.09764 7.48903 3.32002 7.99804 2.60569C8.50704 3.32002 8.9151 4.09764 9.21329 4.9162H6.78279ZM6.19906 8.01561C6.20755 7.64616 6.23707 7.27914 6.28698 6.9162H9.7091C9.759 7.27914 9.78852 7.64616 9.79701 8.01561C9.78852 8.38507 9.759 8.75208 9.7091 9.11503H6.28698C6.23707 8.75208 6.20755 8.38507 6.19906 8.01561ZM11.797 8.03644C11.7895 8.39824 11.7652 8.75812 11.7247 9.11503H13.8955C13.9616 8.75862 13.9961 8.39115 13.9961 8.01561C13.9961 7.64008 13.9616 7.27261 13.8955 6.9162H11.7247C11.7652 7.27311 11.7895 7.63299 11.797 7.99479C11.7973 8.00867 11.7973 8.02256 11.797 8.03644ZM7.99804 13.4255C7.48903 12.7112 7.08097 11.9336 6.78279 11.115H9.21329C8.9151 11.9336 8.50704 12.7112 7.99804 13.4255ZM4.67783 11.115C4.93036 11.9682 5.27951 12.7904 5.71875 13.5654C4.52429 13.0743 3.52328 12.2088 2.86182 11.115H4.67783ZM10.5881 12.979C10.4901 13.1772 10.3865 13.3728 10.2773 13.5654C10.38 13.5232 10.4813 13.4782 10.5811 13.4305L10.5575 14.951C10.5542 15.1671 10.6196 15.3683 10.7337 15.5336C9.8802 15.8442 8.95891 16.0137 7.99804 16.0137C3.58084 16.0137 0 12.4328 0 8.01561C0 3.59842 3.58084 0.0175781 7.99804 0.0175781C12.4152 0.0175781 15.9961 3.59842 15.9961 8.01561C15.9961 8.93342 15.8415 9.81512 15.5569 10.6361L11.6254 10.5752C11.0732 10.5666 10.6186 11.0074 10.6101 11.5596L10.5881 12.979ZM11.3182 4.9162H13.1343C12.4728 3.82239 11.4718 2.95691 10.2773 2.46582C10.7166 3.24079 11.0657 4.06303 11.3182 4.9162Z"
-                                 fill="#C9D2D7" />
-                         </svg>
-                         Site List</a>
-                 </div>
-
-             </li>
-             <li class="mb-3 ms-2 mt-2 me-2 rotate_icon"
-                 style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
-
-                 <input type="checkbox" name="checking_input" id="checking_input_service" style="display:none"
-                     class="checking_input">
-                 <label for="checking_input_service" class="yy pa_list d-flex justify-content-between align-items-center p-2"
-                     style="border-radius: 5px;">
-                     <span> <svg class="me-2" width="16" height="17" viewBox="0 0 16 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M14.3167 4.90658L7.84857 8.49998M7.84857 8.49998L1.38045 4.90658M7.84857 8.49998L7.84859 15.7291M14.6972 11.5884V5.41162C14.6972 5.15089 14.6972 5.02052 14.6588 4.90425C14.6248 4.80138 14.5692 4.70696 14.4958 4.6273C14.4128 4.53725 14.2989 4.47394 14.0709 4.34731L8.43988 1.21894C8.22407 1.09905 8.11616 1.0391 8.00189 1.0156C7.90075 0.9948 7.79644 0.9948 7.6953 1.0156C7.58102 1.0391 7.47312 1.09905 7.25731 1.21895L1.62624 4.34732C1.39832 4.47394 1.28436 4.53725 1.20137 4.6273C1.12796 4.70697 1.0724 4.80139 1.03842 4.90425C1 5.02052 1 5.15089 1 5.41163V11.5884C1 11.8491 1 11.9795 1.03842 12.0958C1.0724 12.1986 1.12796 12.293 1.20137 12.3727C1.28436 12.4627 1.39832 12.5261 1.62624 12.6527L7.25731 15.7811C7.47312 15.9009 7.58102 15.9609 7.6953 15.9844C7.79644 16.0052 7.90075 16.0052 8.00189 15.9844C8.11616 15.9609 8.22407 15.9009 8.43988 15.7811L14.0709 12.6527C14.2989 12.5261 14.4128 12.4627 14.4958 12.3727C14.5692 12.293 14.6248 12.1986 14.6588 12.0958C14.6972 11.9795 14.6972 11.8491 14.6972 11.5884Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg> Service</span>
-                     <svg class="move_icon me-3" width="11" height="9" viewBox="0 0 11 9" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                         <path
-                             d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                             fill="#C9D2D7" />
-                     </svg>
-                 </label>
-
-                 <ul class="ch_list">
-                     <li>
-                         <a class="txtt ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 me-2"
-                             style="background: #504E4E; border: 1px solid transparent;border-radius: 6px;display: block;text-decoration: none;color: white;"
-                             href="/service/<%=user_id%>/<%=template_id%>/service_list">Services
-                         </a>
-                     </li>
-                     <li>
-                         <a class="txtt ps-2  pt-1 pb-1 pe-2 me-2 mb-2"
-                             style="background: #504E4E; border: 1px solid  transparent;border-radius: 6px;display: block;text-decoration: none;color: white;"
-                             href="/service/<%=user_id%>/<%=template_id%>">Add Service
-                         </a>
-                     </li>
-                     <li>
-                         <a class="txtt ps-2  pt-1 pb-1 pe-2 me-2"
-                             style="background: #504E4E; border: 1px solid  transparent;border-radius: 6px;display: block;text-decoration: none;color: white;"
-                             href="/service/<%=user_id%>/<%=template_id%>/appointment_list">Appointment List
-                         </a>
-                     </li>
-                 </ul>
-             </li>
-             <li class="mb-3 ms-2 mt-2 me-2 rotate_icon"
-                 style="border-radius: 12px; list-style: none; color: white!important; text-decoration: none!important; ">
-
-                 <input type="checkbox" name="checking_input" id="checking_input" style="display:none"
-                     class="checking_input">
-                 <label for="checking_input" class="yy pa_list d-flex justify-content-between align-items-center p-2"
-                     style="border-radius: 5px;">
-                     <span> <svg class="me-2" width="16" height="17" viewBox="0 0 16 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M14.3167 4.90658L7.84857 8.49998M7.84857 8.49998L1.38045 4.90658M7.84857 8.49998L7.84859 15.7291M14.6972 11.5884V5.41162C14.6972 5.15089 14.6972 5.02052 14.6588 4.90425C14.6248 4.80138 14.5692 4.70696 14.4958 4.6273C14.4128 4.53725 14.2989 4.47394 14.0709 4.34731L8.43988 1.21894C8.22407 1.09905 8.11616 1.0391 8.00189 1.0156C7.90075 0.9948 7.79644 0.9948 7.6953 1.0156C7.58102 1.0391 7.47312 1.09905 7.25731 1.21895L1.62624 4.34732C1.39832 4.47394 1.28436 4.53725 1.20137 4.6273C1.12796 4.70697 1.0724 4.80139 1.03842 4.90425C1 5.02052 1 5.15089 1 5.41163V11.5884C1 11.8491 1 11.9795 1.03842 12.0958C1.0724 12.1986 1.12796 12.293 1.20137 12.3727C1.28436 12.4627 1.39832 12.5261 1.62624 12.6527L7.25731 15.7811C7.47312 15.9009 7.58102 15.9609 7.6953 15.9844C7.79644 16.0052 7.90075 16.0052 8.00189 15.9844C8.11616 15.9609 8.22407 15.9009 8.43988 15.7811L14.0709 12.6527C14.2989 12.5261 14.4128 12.4627 14.4958 12.3727C14.5692 12.293 14.6248 12.1986 14.6588 12.0958C14.6972 11.9795 14.6972 11.8491 14.6972 11.5884Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg> Inventory</span>
-                     <svg class="move_icon me-3" width="11" height="9" viewBox="0 0 11 9" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                         <path
-                             d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                             fill="#C9D2D7" />
-                     </svg>
-                 </label>
-
-                 <ul class="ch_list">
-                     <li>
-                         <a class="txtt ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 me-2"
-                             style="background: #504E4E; border: 1px solid transparent;border-radius: 6px;display: block;text-decoration: none;color: white;" href="/inventory/<%=user_id%>/<%=template_id%>/product_list">Products
-                         </a>
-                     </li>
-                     <li>
-                         <a class="txtt ps-2  pt-1 pb-1 pe-2 me-2 mb-2"
-                             style="background: #504E4E; border: 1px solid  transparent;border-radius: 6px;display: block;text-decoration: none;color: white;" href="/inventory/<%=user_id%>/<%=template_id%>/add_product">Add Products
-                         </a>
-                     </li>
-                     <li>
-                         <a class="txtt ps-2  pt-1 pb-1 pe-2 me-2"
-                             style="background: #504E4E; border: 1px solid  transparent;border-radius: 6px;display: block;text-decoration: none;color: white;" href="/inventory/<%=user_id%>/<%=template_id%>/product_category">Product Category
-                         </a>
-                     </li>
-                 </ul>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <a class="d-flex justify-content-between" style="display: block;text-decoration: none;color:white" href="/inventory/<%=user_id%>/<%=template_id%>/order_list">
-                     <span> <svg class="me-2" width="15" height="17" viewBox="0 0 15 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M13 8.875V4.6C13 3.33988 13 2.70982 12.7548 2.22852C12.539 1.80516 12.1948 1.46095 11.7715 1.24524C11.2902 1 10.6601 1 9.4 1H4.6C3.33988 1 2.70982 1 2.22852 1.24524C1.80516 1.46095 1.46095 1.80516 1.24524 2.22852C1 2.70982 1 3.33988 1 4.6V12.4C1 13.6601 1 14.2902 1.24524 14.7715C1.46095 15.1948 1.80516 15.539 2.22852 15.7548C2.70982 16 3.33988 16 4.6 16H7M8.5 7.75H4M5.5 10.75H4M10 4.75H4M8.875 13.75L10.375 15.25L13.75 11.875"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>Order List</span>
-                 </a>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <span> <svg class="me-2" width="18" height="17" viewBox="0 0 18 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M6.62952 2.6916L7.50823 1.42882C7.69517 1.16017 8.00175 1 8.32905 1H9.42219C9.74827 1 10.0539 1.15898 10.241 1.426L11.1097 2.66524M6.62952 2.6916C6.36938 3.06273 5.93697 3.24459 5.47801 3.21217M6.62952 2.6916C6.36811 3.06184 5.93697 3.2461 5.47801 3.21217M5.47801 3.21217L3.91893 3.11429C3.59808 3.09414 3.28711 3.22948 3.0832 3.47801L2.39575 4.31584C2.17955 4.57933 2.11245 4.9348 2.21771 5.25898L2.66736 6.64378M2.66736 6.64378C2.73406 6.86003 2.74259 7.0917 2.69486 7.3105M2.66736 6.64378C2.735 6.85965 2.74322 7.09085 2.69454 7.31274M2.69486 7.3105C2.6465 7.52672 2.54282 7.73087 2.38889 7.89619M2.69486 7.3105L2.69454 7.31274M2.38889 7.89619L1.36575 8.9966C1.13735 9.24225 1.04732 9.58605 1.126 9.91211L1.36504 10.9027C1.44346 11.2277 1.67911 11.492 1.99301 11.607L3.39879 12.1222C3.61246 12.2049 3.79706 12.3393 3.93677 12.5086M2.38889 7.89619C2.54377 7.73222 2.6465 7.52873 2.69454 7.31274M3.93677 12.5086C4.07553 12.6784 4.17004 12.8834 4.20671 13.1053M3.93677 12.5086C4.07679 12.6784 4.17162 12.8828 4.20671 13.1053M3.93677 12.5086L3.93455 12.5062C3.92539 12.4951 3.91559 12.4835 3.90611 12.4727M4.20671 13.1053L4.44616 14.5762C4.49943 14.9034 4.71138 15.1829 5.01206 15.3225L5.99696 15.7798C6.28803 15.9149 6.62627 15.9021 6.90633 15.7455L8.23018 15.0048M8.23018 15.0048C8.429 14.8931 8.65089 14.8371 8.87279 14.8369M8.23018 15.0048C8.30889 14.96 8.39139 14.9243 8.4761 14.8975C8.60475 14.8567 8.73877 14.8366 8.87279 14.8369M8.87279 14.8369C8.98816 14.8371 9.10353 14.8524 9.21606 14.8825C9.32068 14.9105 9.42246 14.9514 9.51887 15.0048M8.87279 14.8369C9.09563 14.8366 9.31879 14.8925 9.51887 15.0048M9.51887 15.0048L10.9096 15.7576C11.1908 15.9099 11.528 15.9185 11.8166 15.7806L12.7971 15.3123C13.0967 15.1692 13.3057 14.8867 13.355 14.5584L13.5689 13.1335M13.5689 13.1335C13.604 12.9103 13.6972 12.7039 13.8357 12.5326M13.5689 13.1335C13.6027 12.9098 13.6966 12.7037 13.8357 12.5326M13.8357 12.5326C13.9732 12.3631 14.1556 12.228 14.368 12.1445M13.8357 12.5326C13.9729 12.3624 14.1546 12.227 14.368 12.1445M14.368 12.1445L15.7921 11.5863C16.1001 11.4656 16.3285 11.2005 16.4021 10.878L16.6326 9.86893C16.7061 9.54731 16.6162 9.21015 16.3924 8.96779L15.3605 7.85047M15.3605 7.85047C15.2037 7.68458 15.0943 7.48641 15.0412 7.2758M15.3605 7.85047C15.2868 7.77299 15.2236 7.68829 15.1721 7.59848C15.1133 7.4965 15.0694 7.38795 15.0412 7.2758M15.0412 7.2758C14.9891 7.0667 14.9922 6.84512 15.0583 6.63064L15.5031 5.20507C15.6034 4.88327 15.535 4.53254 15.3209 4.27216L14.6545 3.46173C14.4483 3.21084 14.133 3.07576 13.8091 3.09949L12.2707 3.21217M12.2707 3.21217C12.0425 3.22828 11.8181 3.18481 11.6183 3.09129M12.2707 3.21217C12.0422 3.22921 11.8181 3.18539 11.6183 3.09129M11.6183 3.09129C11.4173 2.99657 11.2409 2.85092 11.1097 2.66524M11.6183 3.09129C11.417 2.99692 11.2403 2.85166 11.1097 2.66524M2.69454 7.31274L2.69518 7.30946M11.4144 8.50796C11.4144 9.90668 10.255 11.0405 8.82506 11.0405C7.39508 11.0405 6.23567 9.90668 6.23567 8.50796C6.23567 7.10925 7.39508 5.9754 8.82506 5.9754C10.255 5.9754 11.4144 7.10925 11.4144 8.50796Z"
-                                 stroke="#C9D2D7" stroke-width="2" />
-                         </svg>CMS</span>
-                 </div>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <span> <svg class="me-2" width="18" height="16" viewBox="0 0 18 16" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M15.4118 15V9.23529M8.82353 15V6.76471M2.23529 15L2.23529 11.7059M9.98197 2.66971L14.2383 4.26585M7.83428 2.97723L3.22372 6.43515M16.2852 3.8324C16.7677 4.31481 16.7677 5.09696 16.2852 5.57937C15.8028 6.06178 15.0207 6.06178 14.5383 5.57937C14.0559 5.09696 14.0559 4.31481 14.5383 3.8324C15.0207 3.34999 15.8028 3.34999 16.2852 3.8324ZM3.10878 6.30299C3.59119 6.7854 3.59119 7.56754 3.10878 8.04996C2.62637 8.53237 1.84422 8.53237 1.36181 8.04996C0.879397 7.56754 0.879397 6.7854 1.36181 6.30299C1.84422 5.82057 2.62637 5.82057 3.10878 6.30299ZM9.69701 1.36181C10.1794 1.84422 10.1794 2.62637 9.69701 3.10878C9.2146 3.59119 8.43246 3.59119 7.95004 3.10878C7.46763 2.62637 7.46763 1.84422 7.95004 1.36181C8.43246 0.879397 9.2146 0.879397 9.69701 1.36181Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>
-                         Analytics</span>
-                 </div>
-             </li>
-             <li class="mb-3 ms-2 mt-2 me-2 rotate_icon"
-                 style="list-style: none; color: white!important; text-decoration: none!important; ">
-
-                 <input type="checkbox" name="checking_input1" id="checking_input1" style="display:none"
-                     class="checking_input">
-
-                 <label for="checking_input1"
-                     class="pa_list yy d-flex justify-content-between align-items-center p-2 yy"
-                     style="border-radius: 5px;">
-                     <span style="border: 1px solid transparent;"> <svg class="me-2" width="17" height="17"
-                             viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M1 1H1.97962C2.16414 1 2.25639 1 2.33064 1.03393C2.39606 1.06383 2.45151 1.11192 2.49036 1.17246C2.53445 1.24116 2.5475 1.33249 2.57359 1.51515L2.92857 4M2.92857 4L3.71749 9.79855C3.8176 10.5344 3.86766 10.9023 4.04357 11.1793C4.19858 11.4233 4.42081 11.6173 4.68352 11.738C4.98165 11.875 5.35296 11.875 6.09558 11.875H12.514C13.2209 11.875 13.5744 11.875 13.8632 11.7478C14.1179 11.6357 14.3364 11.4549 14.4942 11.2257C14.6732 10.9657 14.7393 10.6185 14.8716 9.92407L15.8643 4.71227C15.9109 4.46786 15.9342 4.34565 15.9004 4.25012C15.8708 4.16633 15.8124 4.09576 15.7357 4.05101C15.6481 4 15.5237 4 15.2749 4H2.92857ZM7 15.25C7 15.6642 6.66421 16 6.25 16C5.83579 16 5.5 15.6642 5.5 15.25C5.5 14.8358 5.83579 14.5 6.25 14.5C6.66421 14.5 7 14.8358 7 15.25ZM13 15.25C13 15.6642 12.6642 16 12.25 16C11.8358 16 11.5 15.6642 11.5 15.25C11.5 14.8358 11.8358 14.5 12.25 14.5C12.6642 14.5 13 14.8358 13 15.25Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>Cart</span>
-                     <!-- <span class="ms-2 rotated" id="mySvg" style="border: 1px solid blue;"> -->
-                     <svg class="me-3" width=" 11" height="9" viewBox="0 0 11 9" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                         <path
-                             d="M10.052 8.9403L5.058 3.8583L0.064 8.9403V5.7723L5.058 0.712296L10.052 5.7723L10.052 8.9403Z"
-                             fill="#C9D2D7" />
-                     </svg>
-                     <!-- </span> -->
-                 </label>
-                 <ul class="ch_list">
-                     <li class="txtt ps-2 pt-1 pb-1 pe-2 mt-2 mb-2 me-2 "
-                         style="background: #504E4E; border: 1px solid transparent;border-radius: 6px;">Cart
-                         Templates</li>
-
-                     <!-- <li class="p-1 mt-2 mb-2" style="background: #504E4E; order: 1px solid transparent;border-radius: 12px; list-style-type:circle!important;">Cart Templates</li> -->
-                 </ul>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <span> <svg class="me-2" width="15" height="17" viewBox="0 0 15 17" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M10.1 5.5V3.4C10.1 2.55992 10.1 2.13988 9.95831 1.81901C9.83367 1.53677 9.6348 1.3073 9.39019 1.16349C9.1121 1 8.74807 1 8.02 1H3.08C2.35193 1 1.9879 1 1.70981 1.16349C1.4652 1.3073 1.26633 1.53677 1.14169 1.81901C1 2.13988 1 2.55992 1 3.4V9.1C1 9.94008 1 10.3601 1.14169 10.681C1.26633 10.9632 1.4652 11.1927 1.70981 11.3365C1.9879 11.5 2.35193 11.5 3.08 11.5H4.9M6.98 16H11.92C12.6481 16 13.0121 16 13.2902 15.8365C13.5348 15.6927 13.7337 15.4632 13.8583 15.181C14 14.8601 14 14.4401 14 13.6V7.9C14 7.05992 14 6.63988 13.8583 6.31901C13.7337 6.03677 13.5348 5.8073 13.2902 5.66349C13.0121 5.5 12.6481 5.5 11.92 5.5H6.98C6.25193 5.5 5.8879 5.5 5.60981 5.66349C5.3652 5.8073 5.16633 6.03677 5.04169 6.31901C4.9 6.63988 4.9 7.05992 4.9 7.9V13.6C4.9 14.4401 4.9 14.8601 5.04169 15.181C5.16633 15.4632 5.3652 15.6927 5.60981 15.8365C5.8879 16 6.25193 16 6.98 16Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>All Templates</span>
-                 </div>
-             </li>
-             <li class="yy  p-2 mb-3 ms-2 mt-2 me-2"
-                 style="border-radius: 12px ; list-style: none; color: white!important; text-decoration: none!important; ">
-                 <div class="d-flex justify-content-between">
-                     <span><svg class="me-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                             <path
-                                 d="M5.2 1H2.24444C1.80885 1 1.59105 1 1.42467 1.08477C1.27833 1.15934 1.15934 1.27833 1.08477 1.42467C1 1.59105 1 1.80885 1 2.24444V5.2C1 5.6356 1 5.85339 1.08477 6.01977C1.15934 6.16612 1.27833 6.2851 1.42467 6.35967C1.59105 6.44444 1.80885 6.44444 2.24444 6.44444H5.2C5.6356 6.44444 5.85339 6.44444 6.01977 6.35967C6.16612 6.2851 6.2851 6.16612 6.35967 6.01977C6.44444 5.85339 6.44444 5.6356 6.44444 5.2V2.24444C6.44444 1.80885 6.44444 1.59105 6.35967 1.42467C6.2851 1.27833 6.16612 1.15934 6.01977 1.08477C5.85339 1 5.6356 1 5.2 1Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                             <path
-                                 d="M13.7556 1H10.8C10.3644 1 10.1466 1 9.98023 1.08477C9.83388 1.15934 9.7149 1.27833 9.64033 1.42467C9.55556 1.59105 9.55556 1.80885 9.55556 2.24444V5.2C9.55556 5.6356 9.55556 5.85339 9.64033 6.01977C9.7149 6.16612 9.83388 6.2851 9.98023 6.35967C10.1466 6.44444 10.3644 6.44444 10.8 6.44444H13.7556C14.1912 6.44444 14.409 6.44444 14.5753 6.35967C14.7217 6.2851 14.8407 6.16612 14.9152 6.01977C15 5.85339 15 5.6356 15 5.2V2.24444C15 1.80885 15 1.59105 14.9152 1.42467C14.8407 1.27833 14.7217 1.15934 14.5753 1.08477C14.409 1 14.1912 1 13.7556 1Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                             <path
-                                 d="M13.7556 9.55556H10.8C10.3644 9.55556 10.1466 9.55556 9.98023 9.64033C9.83388 9.7149 9.7149 9.83388 9.64033 9.98023C9.55556 10.1466 9.55556 10.3644 9.55556 10.8V13.7556C9.55556 14.1912 9.55556 14.409 9.64033 14.5753C9.7149 14.7217 9.83388 14.8407 9.98023 14.9152C10.1466 15 10.3644 15 10.8 15H13.7556C14.1912 15 14.409 15 14.5753 14.9152C14.7217 14.8407 14.8407 14.7217 14.9152 14.5753C15 14.409 15 14.1912 15 13.7556V10.8C15 10.3644 15 10.1466 14.9152 9.98023C14.8407 9.83388 14.7217 9.7149 14.5753 9.64033C14.409 9.55556 14.1912 9.55556 13.7556 9.55556Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                             <path
-                                 d="M5.2 9.55556H2.24444C1.80885 9.55556 1.59105 9.55556 1.42467 9.64033C1.27833 9.7149 1.15934 9.83388 1.08477 9.98023C1 10.1466 1 10.3644 1 10.8V13.7556C1 14.1912 1 14.409 1.08477 14.5753C1.15934 14.7217 1.27833 14.8407 1.42467 14.9152C1.59105 15 1.80885 15 2.24444 15H5.2C5.6356 15 5.85339 15 6.01977 14.9152C6.16612 14.8407 6.2851 14.7217 6.35967 14.5753C6.44444 14.409 6.44444 14.1912 6.44444 13.7556V10.8C6.44444 10.3644 6.44444 10.1466 6.35967 9.98023C6.2851 9.83388 6.16612 9.7149 6.01977 9.64033C5.85339 9.55556 5.6356 9.55556 5.2 9.55556Z"
-                                 stroke="#C9D2D7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                         </svg>Apps</span>
-                 </div>
-             </li>
-         </div>
-     </div>
-     <!-- left sidebar  end -->
+            <!-- left sidebar  end -->
 
 
-        <!-- right  part start -->
-        <div class="p-4"
-            style="border: 2px solid transparent; background: #EAEAEA; flex:1; height: 92vh!important; overflow-y: auto; overflow-x: hidden;">
-            <% if (success_msg.length> 0){ %>
-                <div class="alert alert-success">
-                    <%= success_msg %>
-                </div>
-                <% } %>
-                    <div class="p-4" style="border-radius: 10px;  background: white; ">
+            <!-- right  part start -->
+            <div class="p-4"
+                style="border: 2px solid transparent; background: #EAEAEA; flex:1; height: 92vh!important; overflow-y: auto; overflow-x: hidden;">
+                <% if (success_msg.length> 0){ %>
+                    <div class="alert alert-success">
+                        <%= success_msg %>
+                    </div>
+                    <% } %>
+                        <div class="p-4" style="border-radius: 10px;  background: white; ">
 
-                        <div class="d-flex justify-content-between mb-4">
-                            <h4 class="fw-bold">Add Product</h4>
-                            <div>
-                                <div>Pages/ Add Product</div>
+                            <div class="d-flex justify-content-between mb-4">
+                                <h4 class="fw-bold">Add Product</h4>
+                                <div>
+                                    <div>Pages/ Add Product</div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div style="background-color: white; margin: 0px;">
+                            <div style="background-color: white; margin: 0px;">
 
-                            <!-- Start Main Content Area -->
-                            <div class="main-content d-flex flex-column">
+                                <!-- Start Main Content Area -->
+                                <div class="main-content d-flex flex-column">
 
-                                <div style="background-color: white; ">
+                                    <div style="background-color: white; ">
 
-                                    <div class="page-title-area">
-                                        <div class="container-fluid">
-                                            <div class="row align-items-center">
+                                        <div class="page-title-area">
+                                            <div class="container-fluid">
+                                                <div class="row align-items-center">
 
 
-                                                <!-- <div class="col-lg-6 col-sm-6 text-end">
+                                                    <!-- <div class="col-lg-6 col-sm-6 text-end">
                             <span class="btn btn-primary"
                             onclick="make_duplicate_product('single_product','product_form')">Make
                             Duplicate</span>
                         </div>  -->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <form action="<%= `/inventory/${user_id}/${template_id}/post_product` %>"
-                                        method="post" enctype="multipart/form-data" id="product_form">
+                                        <form action="<%= `/inventory/${user_id}/${template_id}/post_product` %>"
+                                            method="post" enctype="multipart/form-data" id="product_form">
 
-                                        <div id="single_product">
+                                            <div id="single_product">
 
 
-                                            <div id="productInformation" class=""
-                                                style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px;box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.122);">
-                                                <div class="d-flex justify-content-between ">
-                                                    <h3>Product Information</h3>
-                                                    <span class="btn btn-primary"
-                                                        onclick="make_duplicate_product('single_product','product_form')">Make
-                                                        Duplicate</span>
-                                                </div>
-                                                <div class="col-12">
-                                                    <b>*All Image size should be 300/300.</b>
-                                                </div>
-                                                <div class="row gap-3 mt-3">
-                                                    <div class="col-md-12 col-lg-6 col-sm-12 ">
-
-                                                        <div class="row h-100">
-
-                                                            <div class="col-md-4 col-sm-12 col-lg-4">
-                                                                <div class="main-img-container"
-                                                                    style="display: flex; align-items:center;flex-direction:column;justify-content:center;">
-
-                                                                    <img class=""
-                                                                        src="https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png"
-                                                                        alt=""
-                                                                        style="width:100%;border-radius:5px;max-width: 300px;"
-                                                                        id="main-img-preview">
-                                                                    <label for="mainImg"
-                                                                        class="btn btn-primary mt-3">Set
-                                                                        Primary
-                                                                        Image</label>
-                                                                    <input type="file" for="mainImg" class="d-none"
-                                                                        id="mainImg"
-                                                                        onchange="main_image_changed(this,null)"
-                                                                        name="primary_image">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 col-lg-8"
-                                                                id="secondary_img_container_parent"
-                                                                style="border:2px solid #C9D2D7; padding:10px; max-height:300px; overflow-y:auto;">
-                                                                <div class="secondary-img-container"
-                                                                    id="secondary-img-container">
-
-                                                                </div>
-                                                                <div class="s-i-c-2">
-
-                                                                    <label for="secondaryImg" class="btn btn-info"><i
-                                                                            class="fa-solid fa-plus"></i></label>
-                                                                    <input type="file" name="secondary_images"
-                                                                        class="d-none" id="secondaryImg"
-                                                                        onchange="secondary_image_changed(this,null)"
-                                                                        multiple>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div id="productInformation" class=""
+                                                    style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px;box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.122);">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <h3>Product Information</h3>
+                                                        <span class="btn btn-primary"
+                                                            onclick="make_duplicate_product('single_product','product_form')">Make
+                                                            Duplicate</span>
                                                     </div>
-                                                    <div class="col-md-12 col-lg-6 col-sm-12 row ">
-                                                        <div class="col-12 d-none">
-                                                            <input type="text" id="varient_combinations"
-                                                                name="varient_combinations">
-                                                        </div>
+                                                    <div class="col-12">
+                                                        <b>*All Image size should be 300/300.</b>
+                                                    </div>
+                                                    <div class="row gap-3 mt-3">
+                                                        <div class="col-md-12 col-lg-6 col-sm-12 ">
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group"
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label>Product Name</label>
-                                                                <input type="text" class="p-2 my-form-control"
-                                                                    placeholder="Null" name="product_name"
-                                                                    onkeypress="return event.keyCode != 13;">
+                                                            <div class="row h-100">
+
+                                                                <div class="col-md-4 col-sm-12 col-lg-4">
+                                                                    <div class="main-img-container"
+                                                                        style="display: flex; align-items:center;flex-direction:column;justify-content:center;">
+
+                                                                        <img class=""
+                                                                            src="https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png"
+                                                                            alt=""
+                                                                            style="width:100%;border-radius:5px;max-width: 300px;"
+                                                                            id="main-img-preview">
+                                                                        <label for="mainImg"
+                                                                            class="btn btn-primary mt-3">Set
+                                                                            Primary
+                                                                            Image</label>
+                                                                        <input type="file" for="mainImg" class="d-none"
+                                                                            id="mainImg"
+                                                                            onchange="main_image_changed(this,null)"
+                                                                            name="primary_image">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 col-lg-8"
+                                                                    id="secondary_img_container_parent"
+                                                                    style="border:2px solid #C9D2D7; padding:10px; max-height:300px; overflow-y:auto;">
+                                                                    <div class="secondary-img-container"
+                                                                        id="secondary-img-container">
+
+                                                                    </div>
+                                                                    <div class="s-i-c-2">
+
+                                                                        <label for="secondaryImg"
+                                                                            class="btn btn-info"><i
+                                                                                class="fa-solid fa-plus"></i></label>
+                                                                        <input type="file" name="secondary_images"
+                                                                            class="d-none" id="secondaryImg"
+                                                                            onchange="secondary_image_changed(this,null)"
+                                                                            multiple>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-12 col-lg-6 col-sm-12 row ">
+                                                            <div class="col-12 d-none">
+                                                                <input type="text" id="varient_combinations"
+                                                                    name="varient_combinations">
+                                                            </div>
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group  position-relative"
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label>Product
-                                                                    Category</label>
-                                                                <div
-                                                                    class=" position-relative single-contact-info productName">
-                                                                    <input type="text" class="my-form-control p-2"
-                                                                        placeholder="Null"
-                                                                        onclick="showContentDropdown(1000, null)"
-                                                                        autocomplete="off" id="contentsTitleInput_1000"
-                                                                        name="product_category"
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group"
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label>Product Name</label>
+                                                                    <input type="text" class="p-2 my-form-control"
+                                                                        placeholder="Null" name="product_name"
                                                                         onkeypress="return event.keyCode != 13;">
-                                                                    <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox"
-                                                                        id="dropdownMenu_1000"
-                                                                        style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
-                                                                        <% categories.forEach(function(category) {%>
-                                                                            <div class="content_dropdown-item p-2"
-                                                                            onclick="selectOption(this, null)">
-                                                                            <%= category.name %>    
-                                                                        </div>
+                                                                </div>
+                                                            </div>
 
-                                                                        <%}) %>
-                                                                        <!-- <div class="content_dropdown-item p-2"
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group  position-relative"
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label>Product
+                                                                        Category</label>
+                                                                    <div
+                                                                        class=" position-relative single-contact-info productName">
+                                                                        <input type="text" class="my-form-control p-2"
+                                                                            placeholder="Null"
+                                                                            onclick="showContentDropdown(1000, null)"
+                                                                            autocomplete="off"
+                                                                            id="contentsTitleInput_1000"
+                                                                            name="product_category"
+                                                                            onkeypress="return event.keyCode != 13;">
+                                                                        <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox"
+                                                                            id="dropdownMenu_1000"
+                                                                            style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray;">
+                                                                            <% categories.forEach(function(category) {%>
+                                                                                <div class="content_dropdown-item p-2"
+                                                                                    onclick="selectOption(this, null)">
+                                                                                    <%= category.name %>
+                                                                                </div>
+
+                                                                                <%}) %>
+                                                                                    <!-- <div class="content_dropdown-item p-2"
                                                                             onclick="selectOption(this, null)">Category
                                                                             1</div>
                                                                         <div class="content_dropdown-item p-2"
@@ -893,367 +324,321 @@
                                                                         <div class="content_dropdown-item p-2"
                                                                             onclick="selectOption(this, null)">Category
                                                                             4</div> -->
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group "
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label>Buying Price</label>
-                                                                <input type="number" class="my-form-control p-2"
-                                                                    placeholder="Null" name="buying_price"
-                                                                    onkeypress="return event.keyCode != 13;">
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group "
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label>Buying Price</label>
+                                                                    <input type="number" class="my-form-control p-2"
+                                                                        placeholder="Null" name="buying_price"
+                                                                        onkeypress="return event.keyCode != 13;">
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group "
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label>Selling Price</label>
-                                                                <input type="number" class="my-form-control p-2"
-                                                                    placeholder="Null" name="selling_price"
-                                                                    onkeypress="return event.keyCode != 13;">
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group "
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label>Selling Price</label>
+                                                                    <input type="number" class="my-form-control p-2"
+                                                                        placeholder="Null" name="selling_price"
+                                                                        onkeypress="return event.keyCode != 13;">
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group "
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label>Discount</label>
-                                                                <input type="number" class="my-form-control p-2 "
-                                                                    placeholder="Null" name="discount"
-                                                                    onkeypress="return event.keyCode != 13;">
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group "
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label>Discount</label>
+                                                                    <input type="number" class="my-form-control p-2 "
+                                                                        placeholder="Null" name="discount"
+                                                                        onkeypress="return event.keyCode != 13;">
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="col-md-6" style="margin-bottom: 10px;">
-                                                            <div class="form-group "
-                                                                style="background-color: white; border-radius: 5px; padding:10px">
-                                                                <label for="DiscountExpireDate">Discount Expire
-                                                                    Date</label>
-                                                                <input type="date" class="my-form-control p-2 w-100"
-                                                                    id="DiscountExpireDate" placeholder="Null"
-                                                                    name="discount_expire_date" min="2023-10-22"
-                                                                    onkeypress="return event.keyCode != 13;">
-                                                                <!-- <label>Date</label>
+                                                            <div class="col-md-6" style="margin-bottom: 10px;">
+                                                                <div class="form-group "
+                                                                    style="background-color: white; border-radius: 5px; padding:10px">
+                                                                    <label for="DiscountExpireDate">Discount Expire
+                                                                        Date</label>
+                                                                    <input type="date" class="my-form-control p-2 w-100"
+                                                                        id="DiscountExpireDate" placeholder="Null"
+                                                                        name="discount_expire_date" min="2023-10-22"
+                                                                        onkeypress="return event.keyCode != 13;">
+                                                                    <!-- <label>Date</label>
                                                         <input type="date" class="form-control" placeholder="Null"
                                                             name="product_name"
                                                             onkeypress="return event.keyCode != 13;">  -->
-                                                                <script>
-                                                                    const currentDate = new Date();
+                                                                    <script>
+                                                                        const currentDate = new Date();
 
-                                                                    const minDate = currentDate.toISOString().slice(0, 10);
+                                                                        const minDate = currentDate.toISOString().slice(0, 10);
 
-                                                                    document.getElementById("DiscountExpireDate").setAttribute("min", minDate);
-                                                                </script>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="ProductVariant" class="mt-4"
-                                                style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px;box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.122);">
-                                                <div class="d-flex justify-content-between ">
-                                                    <h3>Product Variant</h3>
-                                                </div>
-
-                                                <div class="row " id="varient_container_">
-
-                                                    <div class="col-lg-4 col-md-4 col-sm-12 colorVariantBox mt-3">
-                                                        <div
-                                                            style="background-color:white; border-radius:5px; padding:10px;">
-                                                            <label
-                                                                class="varient_label inline-block d-flex justify-content-between align-items-center"
-                                                                for="colorVariant">Color <span
-                                                                    onclick="this.parentNode.parentNode.parentNode.remove()"><i
-                                                                        class="fa-solid fa-circle-xmark"
-                                                                        style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span></label>
-                                                            <div class="position-relative">
-                                                                <ul class="colorInputUL" id="colorInputUL"
-                                                                    style=" margin-bottom: 0px;"
-                                                                    onclick="showColorDropDown(this)">
-                                                                    <input type="text" class="tagIntpus"
-                                                                        name="colorVariants" spellcheck="false"
-                                                                        id="variantColor"
-                                                                        placeholder="Write here for tag"
-                                                                        onkeypress="return event.keyCode != 13;">
-                                                                </ul>
-                                                                <div class="dropdownBox d-none" id="colorDropdownBox"
-                                                                    style="height: 200px; overflow-y: auto;">
-                                                                    <ul>
-                                                                        <li onclick="getValueFronDropDown(this)">Red
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">Blue
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">Black
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">Pink
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">Yellow
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">White
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">Brown
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-4 col-sm-12 colorVariantBox mt-3">
-                                                        <div
-                                                            style="background-color:white; border-radius:5px; padding:10px;">
-                                                            <label
-                                                                class="varient_label inline-block d-flex justify-content-between align-items-center"
-                                                                for="sizeVariant">Size
-                                                                <span
-                                                                    onclick="this.parentNode.parentNode.parentNode.remove()"><i
-                                                                        class="fa-solid fa-circle-xmark"
-                                                                        style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span>
-                                                            </label>
-                                                            <div class="position-relative">
-                                                                <ul class="colorInputUL" id="sizeInputUL"
-                                                                    style="margin-bottom: 0px;"
-                                                                    onclick="showColorDropDown(this)"><input type="text"
-                                                                        class="tagIntpus" name="sizeVariants"
-                                                                        spellcheck="false" id="sizeVariant"
-                                                                        placeholder="Write here for tag"
-                                                                        onkeypress="return event.keyCode != 13;"></ul>
-                                                                <div class="dropdownBox d-none" id="sizedropdownBox"
-                                                                    style="height: 200px; overflow-y: auto;">
-                                                                    <ul>
-                                                                        <li onclick="getValueFronDropDown(this)">SM</li>
-                                                                        <li onclick="getValueFronDropDown(this)">LG</li>
-                                                                        <li onclick="getValueFronDropDown(this)">MD</li>
-                                                                        <li onclick="getValueFronDropDown(this)">XL</li>
-                                                                        <li onclick="getValueFronDropDown(this)">XXL
-                                                                        </li>
-                                                                        <li onclick="getValueFronDropDown(this)">35</li>
-                                                                        <li onclick="getValueFronDropDown(this)">36</li>
-                                                                        <li onclick="getValueFronDropDown(this)">38</li>
-                                                                        <li onclick="getValueFronDropDown(this)">40</li>
-                                                                    </ul>
+                                                                        document.getElementById("DiscountExpireDate").setAttribute("min", minDate);
+                                                                    </script>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="d-md-flex d-xl-flex d-sm-flex text-center justify-content-between align-items-center"
-                                                    style="margin-top:20px">
-                                                    <span class="addVarientSpan"
-                                                        style="background-color:#2871FF;padding:8px 20px;border-radius:5px;color:white;cursor:pointer;"
-                                                        data-bs-toggle="modal" data-bs-target="#addVarientModal">Add
-                                                        Varient</span>
-                                                    <div class="populateBtn delete-table-data mt-4 mt-sm-0" style="">
-                                                        <span onclick="mula(this, null)">Populate variant table</span>
+                                                <div id="ProductVariant" class="mt-4"
+                                                    style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px;box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.122);">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <h3>Product Variant</h3>
                                                     </div>
-                                                </div>
 
+                                                    <div class="row " id="varient_container_">
 
-                                                <div class="modal fade" id="addVarientModal" tabindex="-1"
-                                                    aria-labelledby="addVarientLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="addVarientLabel">Add Varient
-                                                                </h5>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body" style="padding: 100px;">
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <label>Varient Name</label>
-                                                                            <input type="text"
-                                                                                class="form-control-custom"
-                                                                                id="modal_varient_name"
-                                                                                style="padding: 10px 20px;">
-                                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 colorVariantBox mt-3">
+                                                            <div
+                                                                style="background-color:white; border-radius:5px; padding:10px;">
+                                                                <label
+                                                                    class="varient_label inline-block d-flex justify-content-between align-items-center"
+                                                                    for="colorVariant">Color <span
+                                                                        onclick="this.parentNode.parentNode.parentNode.remove()"><i
+                                                                            class="fa-solid fa-circle-xmark"
+                                                                            style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span></label>
+                                                                <div class="position-relative">
+                                                                    <ul class="colorInputUL" id="colorInputUL"
+                                                                        style=" margin-bottom: 0px;"
+                                                                        onclick="showColorDropDown(this)">
+                                                                        <input type="text" class="tagIntpus"
+                                                                            name="colorVariants" spellcheck="false"
+                                                                            id="variantColor"
+                                                                            placeholder="Write here for tag"
+                                                                            onkeypress="return event.keyCode != 13;">
+                                                                    </ul>
+                                                                    <div class="dropdownBox d-none"
+                                                                        id="colorDropdownBox"
+                                                                        style="height: 200px; overflow-y: auto;">
+                                                                        <ul>
+                                                                            <li onclick="getValueFronDropDown(this)">Red
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                Blue
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                Black
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                Pink
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                Yellow
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                White
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">
+                                                                                Brown
+                                                                            </li>
+                                                                        </ul>
                                                                     </div>
-                                                                    <div class="col-12 pt-5 colorVariantBox">
-                                                                        <label class="varient_label"
-                                                                            for="creaateVariant">Varient
-                                                                            Attributes</label>
-                                                                        <div class="position-relative">
-                                                                            <ul class="colorInputUL" id="addNewVarient"
-                                                                                style=" margin-bottom: 0px;"
-                                                                                onclick="showVarientBox(this)"><input
-                                                                                    class="tagIntpus" type="text"
-                                                                                    name="colorVariants"
-                                                                                    spellcheck="false" id="makeVariant"
-                                                                                    placeholder="Write here for tag"
-                                                                                    onkeypress="return event.keyCode != 13;">
-                                                                            </ul>
-                                                                            <div>
-                                                                                <ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
+                                                        <div class="col-lg-4 col-sm-12 colorVariantBox mt-3">
+                                                            <div
+                                                                style="background-color:white; border-radius:5px; padding:10px;">
+                                                                <label
+                                                                    class="varient_label inline-block d-flex justify-content-between align-items-center"
+                                                                    for="sizeVariant">Size
+                                                                    <span
+                                                                        onclick="this.parentNode.parentNode.parentNode.remove()"><i
+                                                                            class="fa-solid fa-circle-xmark"
+                                                                            style="font-size:20px;color:skyblue;border:1px solid skyblue;border-radius:50%;cursor:pointer;"></i></span>
+                                                                </label>
+                                                                <div class="position-relative">
+                                                                    <ul class="colorInputUL" id="sizeInputUL"
+                                                                        style="margin-bottom: 0px;"
+                                                                        onclick="showColorDropDown(this)"><input
+                                                                            type="text" class="tagIntpus"
+                                                                            name="sizeVariants" spellcheck="false"
+                                                                            id="sizeVariant"
+                                                                            placeholder="Write here for tag"
+                                                                            onkeypress="return event.keyCode != 13;">
+                                                                    </ul>
+                                                                    <div class="dropdownBox d-none" id="sizedropdownBox"
+                                                                        style="height: 200px; overflow-y: auto;">
+                                                                        <ul>
+                                                                            <li onclick="getValueFronDropDown(this)">SM
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">LG
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">MD
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">XL
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">XXL
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">35
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">36
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">38
+                                                                            </li>
+                                                                            <li onclick="getValueFronDropDown(this)">40
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-md-flex d-xl-flex d-sm-flex text-center justify-content-between align-items-center"
+                                                        style="margin-top:20px">
+                                                        <span class="addVarientSpan"
+                                                            style="background-color:#2871FF;padding:8px 20px;border-radius:5px;color:white;cursor:pointer;"
+                                                            data-bs-toggle="modal" data-bs-target="#addVarientModal">Add
+                                                            Varient</span>
+                                                        <div class="populateBtn delete-table-data mt-4 mt-sm-0"
+                                                            style="">
+                                                            <span onclick="mula(this, null)">Populate variant
+                                                                table</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="modal fade" id="addVarientModal" tabindex="-1"
+                                                        aria-labelledby="addVarientLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="addVarientLabel">Add
+                                                                        Varient
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body" style="padding: 100px;">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                <label>Varient Name</label>
+                                                                                <input type="text"
+                                                                                    class="form-control-custom"
+                                                                                    id="modal_varient_name"
+                                                                                    style="padding: 10px 20px;">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 pt-5 colorVariantBox">
+                                                                            <label class="varient_label"
+                                                                                for="creaateVariant">Varient
+                                                                                Attributes</label>
+                                                                            <div class="position-relative">
+                                                                                <ul class="colorInputUL"
+                                                                                    id="addNewVarient"
+                                                                                    style=" margin-bottom: 0px;"
+                                                                                    onclick="showVarientBox(this)">
+                                                                                    <input class="tagIntpus" type="text"
+                                                                                        name="colorVariants"
+                                                                                        spellcheck="false"
+                                                                                        id="makeVariant"
+                                                                                        placeholder="Write here for tag"
+                                                                                        onkeypress="return event.keyCode != 13;">
                                                                                 </ul>
+                                                                                <div>
+                                                                                    <ul>
+
+                                                                                    </ul>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary"
-                                                                    onclick="save_varient(this, null)">Save
-                                                                    Varient</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-
-                                            <div class="newVariantTable mt-4"
-                                                style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px">
-                                                <div class="d-flex justify-content-between ">
-                                                    <h3>Product Variant</h3>
-                                                </div>
-                                                <p>Please Provide all information correctly to manage your products with
-                                                    our inventory service.
-                                                </p>
-                                                <div class="table-responsive h-auto" data-simplebar>
-                                                    <table style="table-layout: fixed;width:100%;">
-                                                        <thead class="tableHead" id="tableHead" style="">
-                                                            <tr style="height: 60px;" id="tableHeadTr">
-                                                                <th class="varient_table_label"
-                                                                    style="border-top-left-radius: 10px">----</th>
-                                                                <th class="varient_table_label">----</th>
-                                                                <th>Qunatity</th>
-                                                                <th style="border-top-right-radius: 10px">Actions</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="product_table">
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                            <div id="table_content_container"
-                                                class="newVariantTable TableOfContents  mt-4"
-                                                style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px">
-                                                <div class="d-flex justify-content-between ">
-                                                    <h3>Table of contents for your product</h3>
-                                                </div>
-                                                <div class="row mt-3">
-                                                    <div class="col-md-6 col-xl-6 col-sm-12 ro">
-                                                        <div class="form-group"
-                                                            style="background-color: white; border-radius: 5px; padding:20px">
-                                                            <label>Product Description</label>
-                                                            <textarea name="product_description"
-                                                                class="form-control-custom" cols="40"
-                                                                rows="7"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-xl-6 col-sm-12 mt-sm-3 mt-md-0 mt-3">
-                                                        <div class="form-group"
-                                                            style="background-color: white; border-radius :5px; padding:20px">
-                                                            <label>Additional Information</label>
-                                                            <textarea name="product_additional_information"
-                                                                class="form-control-custom" cols="40"
-                                                                rows="7"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="d-none row " id="table_content_dropdown_">
-                                                    <div
-                                                        class=" col-lg-5 com-md-5 col-sm-12 mt-sm-3  position-relative  productName">
-                                                        <div class="form-group"
-                                                            style="background-color: white; border-radius:5px; padding:20px;">
-                                                            <label style="margin-bottom: 0px;">Attribute Title</label>
-                                                            <div class=" position-relative  productName ">
-                                                                <input type="text"
-                                                                    class="form-control-custom form-control-product border-0"
-                                                                    placeholder="Title"
-                                                                    onclick="showContentDropdown(1, null)"
-                                                                    autocomplete="off" id="contentsTitleInput_"
-                                                                    style="font-size: 16px;" name="attributes_title[]">
-                                                                <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox"
-                                                                    id="dropdownMenu_"
-                                                                    style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Brand</div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Product Type
-                                                                    </div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Fabric</div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Apparel Type
-                                                                    </div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Gender</div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Style</div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Model</div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Size
-                                                                        measurement
-                                                                    </div>
-                                                                    <div class="content_dropdown-item p-2"
-                                                                        onclick="selectOption(this, null)">Colour</div>
-
-                                                                    <!-- Add more options as needed -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary"
+                                                                        onclick="save_varient(this, null)">Save
+                                                                        Varient</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div
-                                                        class="col-lg-5 com-md-5 col-sm-10 mt-sm-3 single-contact-info productName">
-                                                        <div class="form-group"
-                                                            style="background-color: white; border-radius:5px; padding:20px;">
-                                                            <label>Product Value</label>
-                                                            <input type="text" class="form-control-custom"
-                                                                style=" font-size: 16px;border: none;"
-                                                                name="attribute_value[]">
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div
-                                                        class="col-lg-2 com-md-2 col-sm-2 mt-sm-3 table_content-delete d-flex align-items-center">
-                                                        <div class="delete-content-icon"
-                                                            style="border-radius:5px; padding:10px 20px;"
-                                                            onclick="deleteTableContent(this, null)">
-                                                            <span style="color: red">
-                                                                <i class="fa-solid fa-trash-can"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
 
                                                 </div>
 
+                                                <div class="newVariantTable mt-4"
+                                                    style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <h3>Product Variant</h3>
+                                                    </div>
+                                                    <p>Please Provide all information correctly to manage your products
+                                                        with
+                                                        our inventory service.
+                                                    </p>
+                                                    <div class="table-responsive h-auto" data-simplebar>
+                                                        <table style="table-layout: fixed;width:100%;">
+                                                            <thead class="tableHead" id="tableHead" style="">
+                                                                <tr style="height: 60px;" id="tableHeadTr">
+                                                                    <th class="varient_table_label"
+                                                                        style="border-top-left-radius: 10px">----</th>
+                                                                    <th class="varient_table_label">----</th>
+                                                                    <th>Qunatity</th>
+                                                                    <th style="border-top-right-radius: 10px">Actions
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="product_table">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
 
-                                                <div id="table_content_dropdown_box">
-                                                    <div class="row " id="table_content_dropdown_0">
+                                                <div id="table_content_container"
+                                                    class="newVariantTable TableOfContents  mt-4"
+                                                    style="background-color: white; border-radius: 6px; box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);  padding:20px">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <h3>Table of contents for your product</h3>
+                                                    </div>
+                                                    <div class="row mt-3">
+                                                        <div class="col-md-6 col-xl-6 col-sm-12 ro">
+                                                            <div class="form-group"
+                                                                style="background-color: white; border-radius: 5px; padding:20px">
+                                                                <label>Product Description</label>
+                                                                <textarea name="product_description"
+                                                                    class="form-control-custom" cols="40"
+                                                                    rows="7"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-6 col-sm-12 mt-sm-3 mt-md-0 mt-3">
+                                                            <div class="form-group"
+                                                                style="background-color: white; border-radius :5px; padding:20px">
+                                                                <label>Additional Information</label>
+                                                                <textarea name="product_additional_information"
+                                                                    class="form-control-custom" cols="40"
+                                                                    rows="7"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-none row " id="table_content_dropdown_">
                                                         <div
-                                                            class=" col-md-5 col-lg-5 col-sm-12 mt-sm-3 position-relative  productName">
+                                                            class=" col-lg-5 com-md-5 col-sm-12 mt-sm-3  position-relative  productName">
                                                             <div class="form-group"
                                                                 style="background-color: white; border-radius:5px; padding:20px;">
-                                                                <label>Attribute Title</label>
-                                                                <div class=" position-relative productName">
+                                                                <label style="margin-bottom: 0px;">Attribute
+                                                                    Title</label>
+                                                                <div class=" position-relative  productName ">
                                                                     <input type="text"
-                                                                        class="form-control-custom form-control-product border-0 "
+                                                                        class="form-control-custom form-control-product border-0"
                                                                         placeholder="Title"
-                                                                        onclick="showContentDropdown(0, null)"
-                                                                        autocomplete="off" id="contentsTitleInput_0"
-                                                                        name="attributes_title[]"
-                                                                        style="font-size: 16px;">
-                                                                    <div class="content_dropdown-menu border-0 d-none w-100 dropdownMenu_ dropdownBox"
-                                                                        id="dropdownMenu_0"
-                                                                        style="margin-left: 0px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
+                                                                        onclick="showContentDropdown(1, null)"
+                                                                        autocomplete="off" id="contentsTitleInput_"
+                                                                        style="font-size: 16px;"
+                                                                        name="attributes_title[]">
+                                                                    <div class="content_dropdown-menu d-none w-100 border-0 dropdownMenu_ dropdownBox"
+                                                                        id="dropdownMenu_"
+                                                                        style="margin-left: 0px;box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
                                                                         <div class="content_dropdown-item p-2"
                                                                             onclick="selectOption(this, null)">Brand
                                                                         </div>
@@ -1284,12 +669,15 @@
                                                                         <div class="content_dropdown-item p-2"
                                                                             onclick="selectOption(this, null)">Colour
                                                                         </div>
+
+                                                                        <!-- Add more options as needed -->
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-md-5 col-lg-5 col-sm-10 mt-sm-3  productName">
+                                                        <div
+                                                            class="col-lg-5 com-md-5 col-sm-10 mt-sm-3 single-contact-info productName">
                                                             <div class="form-group"
                                                                 style="background-color: white; border-radius:5px; padding:20px;">
                                                                 <label>Product Value</label>
@@ -1301,501 +689,585 @@
                                                         </div>
 
                                                         <div
-                                                            class="col-md-2 col-lg-2 col-sm-2 mt-sm-3  table_content-Add d-flex align-items-center">
-                                                            <div class="add-content-icon"
+                                                            class="col-lg-2 com-md-2 col-sm-2 mt-sm-3 table_content-delete d-flex align-items-center">
+                                                            <div class="delete-content-icon"
                                                                 style="border-radius:5px; padding:10px 20px;"
-                                                                onclick="table_content_dropdown_add(this, null)">
-                                                                <span><i class="fa-solid fa-plus"></i></span>
+                                                                onclick="deleteTableContent(this, null)">
+                                                                <span style="color: red">
+                                                                    <i class="fa-solid fa-trash-can"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div id="table_content_dropdown_box">
+                                                        <div class="row " id="table_content_dropdown_0">
+                                                            <div
+                                                                class=" col-md-5 col-lg-5 col-sm-12 mt-sm-3 position-relative  productName">
+                                                                <div class="form-group"
+                                                                    style="background-color: white; border-radius:5px; padding:20px;">
+                                                                    <label>Attribute Title</label>
+                                                                    <div class=" position-relative productName">
+                                                                        <input type="text"
+                                                                            class="form-control-custom form-control-product border-0 "
+                                                                            placeholder="Title"
+                                                                            onclick="showContentDropdown(0, null)"
+                                                                            autocomplete="off" id="contentsTitleInput_0"
+                                                                            name="attributes_title[]"
+                                                                            style="font-size: 16px;">
+                                                                        <div class="content_dropdown-menu border-0 d-none w-100 dropdownMenu_ dropdownBox"
+                                                                            id="dropdownMenu_0"
+                                                                            style="margin-left: 0px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);border:1px solid gray; height:200px;overflow-y:auto">
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">Brand
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">
+                                                                                Product
+                                                                                Type
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">
+                                                                                Fabric
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">
+                                                                                Apparel
+                                                                                Type
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">
+                                                                                Gender
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">Style
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">Model
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">Size
+                                                                                measurement
+                                                                            </div>
+                                                                            <div class="content_dropdown-item p-2"
+                                                                                onclick="selectOption(this, null)">
+                                                                                Colour
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div
+                                                                class="col-md-5 col-lg-5 col-sm-10 mt-sm-3  productName">
+                                                                <div class="form-group"
+                                                                    style="background-color: white; border-radius:5px; padding:20px;">
+                                                                    <label>Product Value</label>
+                                                                    <input type="text" class="form-control-custom"
+                                                                        style=" font-size: 16px;border: none;"
+                                                                        name="attribute_value[]">
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div
+                                                                class="col-md-2 col-lg-2 col-sm-2 mt-sm-3  table_content-Add d-flex align-items-center">
+                                                                <div class="add-content-icon"
+                                                                    style="border-radius:5px; padding:10px 20px;"
+                                                                    onclick="table_content_dropdown_add(this, null)">
+                                                                    <span><i class="fa-solid fa-plus"></i></span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div
+                                                    style="display: flex; justify-content: center; align-items:center; padding:4em">
+                                                    <button type="submit" class="btn btn-primary me-3 border-0"
+                                                        style="background-color:#2871FF; padding: 10px 3em; font-weight: 600;">
+                                                        Upload
+                                                    </button>
+
+                                                    <button class="btn btn-primary border-0"
+                                                        style="background-color: #6F7D87; padding: 10px 3em; font-weight: 600;">
+                                                        Cancel
+                                                    </button>
+                                                </div>
+
+
                                             </div>
+                                        </form>
 
-                                            <div
-                                                style="display: flex; justify-content: center; align-items:center; padding:4em">
-                                                <button type="submit" class="btn btn-primary me-3 border-0"
-                                                    style="background-color:#2871FF; padding: 10px 3em; font-weight: 600;">
-                                                    Upload
-                                                </button>
-
-                                                <button class="btn btn-primary border-0"
-                                                    style="background-color: #6F7D87; padding: 10px 3em; font-weight: 600;">
-                                                    Cancel
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-                                    </form>
+                                    </div>
 
                                 </div>
+                                <!-- End Main Content Area -->
 
                             </div>
-                            <!-- End Main Content Area -->
 
                         </div>
 
-                    </div>
-
-                    <!-- Start Go Top Area -->
-                    <div class="go-top">
-                        <i class="ri-arrow-up-s-fill"></i>
-                        <i class="ri-arrow-up-s-fill"></i>
-                    </div>
-                    <!-- End Go Top Area -->
+                        <!-- Start Go Top Area -->
+                        <div class="go-top">
+                            <i class="ri-arrow-up-s-fill"></i>
+                            <i class="ri-arrow-up-s-fill"></i>
+                        </div>
+                        <!-- End Go Top Area -->
 
 
-        </div>
+            </div>
 
-        <script>
-            let productCount = 0;
-            const make_duplicate_product = (copy_block, parent_block) => {
-                productCount = productCount + 1;
-                // let copy_product = tag.parentNode.parentNode.parentNode.cloneNode(true);
-                console.log("document.getElementById(copy_block)====", copy_block);
-                let aProduct = document.getElementById(copy_block);
-                let copy_product = '';
-                if (aProduct) {
-                    copy_product = aProduct.cloneNode(true);
-                } else {
-                    copy_product = copy_block.cloneNode(true)
-                }
-                copy_product.style.borderTop = '1px solid tomato';
-
-
-                // Main input clear function 
-                let colorInputUL = document.querySelectorAll(".colorInputUL");
-                for (let i = 0; i < colorInputUL.length; i++) {
-                    if (colorInputUL[i].querySelectorAll('li')) {
-                        colorInputUL[i].querySelectorAll('li').forEach(li => {
-                            li.remove();
-                        });
+            <script>
+                let productCount = 0;
+                const make_duplicate_product = (copy_block, parent_block) => {
+                    productCount = productCount + 1;
+                    // let copy_product = tag.parentNode.parentNode.parentNode.cloneNode(true);
+                    console.log("document.getElementById(copy_block)====", copy_block);
+                    let aProduct = document.getElementById(copy_block);
+                    let copy_product = '';
+                    if (aProduct) {
+                        copy_product = aProduct.cloneNode(true);
+                    } else {
+                        copy_product = copy_block.cloneNode(true)
                     }
-                }
-
-                // Duplicate input clear function 
-                let colorInputUL_2 = copy_product.querySelectorAll('.colorInputUL');
-                for (let i = 0; i < colorInputUL_2.length; i++) {
-                    if (colorInputUL_2[i].querySelectorAll('li')) {
-                        colorInputUL_2[i].querySelectorAll('li').forEach(li => {
-                            li.remove();
-                        });
-                    }
-                }
+                    copy_product.style.borderTop = '1px solid tomato';
 
 
-                // Main dropdownBox ul disable style remove function 
-                let allDropdownBox = document.querySelectorAll('.dropdownBox ul');
-                for (let i = 0; i < allDropdownBox.length; i++) {
-                    if (allDropdownBox[i].querySelectorAll('li')) {
-                        allDropdownBox[i].querySelectorAll('li').forEach(li => {
-                            if (li.hasAttribute('style')) {
-                                li.removeAttribute('style');
-                            }
-                        });
-                    }
-                }
-                // Duplicate dropdownBox ul disable style remove function 
-                let allDropdownBox_2 = copy_product.querySelectorAll('.dropdownBox ul');
-                for (let i = 0; i < allDropdownBox_2.length; i++) {
-                    if (allDropdownBox_2[i].querySelectorAll('li')) {
-                        allDropdownBox_2[i].querySelectorAll('li').forEach(li => {
-                            if (li.hasAttribute('style')) {
-                                li.removeAttribute('style');
-                            }
-                        });
-                    }
-                }
-
-                // Empty duplicate table body function
-                // let newProduct_table = copy_product.querySelector(`table`)
-                // console.log("newProduct_table", `#product_table_${productCount}`, newProduct_table.children[1]);
-                // if (newProduct_table.children[1].children) {
-                //     console.log("children heee");
-                //     newProduct_table.children[1].innerText = "";
-                // }
-
-
-                copy_product.setAttribute("class", 'pt-5');
-
-
-
-                var innerIDs = [];
-
-                function collectInnerIDs(element) {
-
-
-                    if (element.id) {
-                        let value = productCount - 1;
-                        element.id = element.id + "_" + productCount;
-                    }
-                    if (element.hasAttribute("onchange")) {
-                        let onchangeIS = element.getAttribute("onchange");
-                        var onchangeParts = onchangeIS.split('this');
-                        element.setAttribute("onchange", onchangeParts[0] + 'this, ' + productCount + ')');
-                    }
-                    if (element.hasAttribute("for")) {
-                        let prev = element.getAttribute("for");
-                        let newe = prev + '_' + productCount;
-                        element.setAttribute("for", newe);
-
-                    }
-                    if (element.hasAttribute("onclick")) {
-                        let onchangeIS = element.getAttribute("onclick");
-                        var onclickParts = onchangeIS.split(',' || ' ');
-                        if (onclickParts[0] == "save_varient(this" || onclickParts[0] == "mula(this" || onclickParts[0] == "selectOption(this" || onclickParts[0] == "showContentDropdown(0" || onclickParts[0] == "showContentDropdown(1" || onclickParts[0] == "showContentDropdown(1000" || onclickParts[0] == "table_content_dropdown_add(this" || onclickParts[0] == "deleteTableContent(this" || onclickParts[0] == "dynamicDropdown(this") {
-                            element.setAttribute("onclick", onclickParts[0] + ', ' + productCount + ')');
+                    // Main input clear function 
+                    let colorInputUL = document.querySelectorAll(".colorInputUL");
+                    for (let i = 0; i < colorInputUL.length; i++) {
+                        if (colorInputUL[i].querySelectorAll('li')) {
+                            colorInputUL[i].querySelectorAll('li').forEach(li => {
+                                li.remove();
+                            });
                         }
                     }
 
-                    for (var i = 0; i < element.children.length; i++) {
-                        collectInnerIDs(element.children[i]);
+                    // Duplicate input clear function 
+                    let colorInputUL_2 = copy_product.querySelectorAll('.colorInputUL');
+                    for (let i = 0; i < colorInputUL_2.length; i++) {
+                        if (colorInputUL_2[i].querySelectorAll('li')) {
+                            colorInputUL_2[i].querySelectorAll('li').forEach(li => {
+                                li.remove();
+                            });
+                        }
                     }
+
+
+                    // Main dropdownBox ul disable style remove function 
+                    let allDropdownBox = document.querySelectorAll('.dropdownBox ul');
+                    for (let i = 0; i < allDropdownBox.length; i++) {
+                        if (allDropdownBox[i].querySelectorAll('li')) {
+                            allDropdownBox[i].querySelectorAll('li').forEach(li => {
+                                if (li.hasAttribute('style')) {
+                                    li.removeAttribute('style');
+                                }
+                            });
+                        }
+                    }
+                    // Duplicate dropdownBox ul disable style remove function 
+                    let allDropdownBox_2 = copy_product.querySelectorAll('.dropdownBox ul');
+                    for (let i = 0; i < allDropdownBox_2.length; i++) {
+                        if (allDropdownBox_2[i].querySelectorAll('li')) {
+                            allDropdownBox_2[i].querySelectorAll('li').forEach(li => {
+                                if (li.hasAttribute('style')) {
+                                    li.removeAttribute('style');
+                                }
+                            });
+                        }
+                    }
+
+                    // Empty duplicate table body function
+                    // let newProduct_table = copy_product.querySelector(`table`)
+                    // console.log("newProduct_table", `#product_table_${productCount}`, newProduct_table.children[1]);
+                    // if (newProduct_table.children[1].children) {
+                    //     console.log("children heee");
+                    //     newProduct_table.children[1].innerText = "";
+                    // }
+
+
+                    copy_product.setAttribute("class", 'pt-5');
+
+
+
+                    var innerIDs = [];
+
+                    function collectInnerIDs(element) {
+
+
+                        if (element.id) {
+                            let value = productCount - 1;
+                            element.id = element.id + "_" + productCount;
+                        }
+                        if (element.hasAttribute("onchange")) {
+                            let onchangeIS = element.getAttribute("onchange");
+                            var onchangeParts = onchangeIS.split('this');
+                            element.setAttribute("onchange", onchangeParts[0] + 'this, ' + productCount + ')');
+                        }
+                        if (element.hasAttribute("for")) {
+                            let prev = element.getAttribute("for");
+                            let newe = prev + '_' + productCount;
+                            element.setAttribute("for", newe);
+
+                        }
+                        if (element.hasAttribute("onclick")) {
+                            let onchangeIS = element.getAttribute("onclick");
+                            var onclickParts = onchangeIS.split(',' || ' ');
+                            if (onclickParts[0] == "save_varient(this" || onclickParts[0] == "mula(this" || onclickParts[0] == "selectOption(this" || onclickParts[0] == "showContentDropdown(0" || onclickParts[0] == "showContentDropdown(1" || onclickParts[0] == "showContentDropdown(1000" || onclickParts[0] == "table_content_dropdown_add(this" || onclickParts[0] == "deleteTableContent(this" || onclickParts[0] == "dynamicDropdown(this") {
+                                element.setAttribute("onclick", onclickParts[0] + ', ' + productCount + ')');
+                            }
+                        }
+
+                        for (var i = 0; i < element.children.length; i++) {
+                            collectInnerIDs(element.children[i]);
+                        }
+                    }
+
+                    collectInnerIDs(copy_product);
+
+                    // remove Table of contents for your product
+                    // let table_content_dropdown_box_2 = copy_product.querySelector(`#table_content_dropdown_box_${productCount}`);
+                    // console.log('table_content_dropdown_box_2.children[0]', `#table_content_dropdown_box_${productCount}`, table_content_dropdown_box_2);
+                    // const first_table_content_dropdown = table_content_dropdown_box_2.children[0];
+
+                    // table_content_dropdown_box_2.innerText = '';
+                    // table_content_dropdown_box_2.append(first_table_content_dropdown)
+
+
+
+                    let parent = document.getElementById(parent_block);
+                    parent.append(copy_product);
+                    let varient_container = document.getElementById(`varient_container__${productCount}`).parentNode.children[2]
+                    let newVarientBtn = varient_container.querySelector(".addVarientSpan")
+                    newVarientBtn.setAttribute("data-bs-target", `#addVarientModal_${productCount}`);
                 }
-
-                collectInnerIDs(copy_product);
-
-                // remove Table of contents for your product
-                // let table_content_dropdown_box_2 = copy_product.querySelector(`#table_content_dropdown_box_${productCount}`);
-                // console.log('table_content_dropdown_box_2.children[0]', `#table_content_dropdown_box_${productCount}`, table_content_dropdown_box_2);
-                // const first_table_content_dropdown = table_content_dropdown_box_2.children[0];
-
-                // table_content_dropdown_box_2.innerText = '';
-                // table_content_dropdown_box_2.append(first_table_content_dropdown)
+            </script>
 
 
+            <!-- Jquery Min JS -->
+            <!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+            <script src="/assets/js/others/jquery.min.js"></script>
+            <script src="/assets/js/others/inventory.js"></script>
+            <!-- Bootstrap Bundle Min JS -->
+            <script src="/assets/js/others/bootstrap.bundle.min.js"></script>
 
-                let parent = document.getElementById(parent_block);
-                parent.append(copy_product);
-                let varient_container = document.getElementById(`varient_container__${productCount}`).parentNode.children[2]
-                let newVarientBtn = varient_container.querySelector(".addVarientSpan")
-                newVarientBtn.setAttribute("data-bs-target", `#addVarientModal_${productCount}`);
-            }
-        </script>
+            <!-- select2 js file -->
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+            <script id="select2_script">
+                // let forColorVariant;
+                // let forSizeVariant;
+                // const dynamicDropdown = (tag, num) =>{
+                //     if (num) {
+                //         let addProduct1Color = tag.previousSibling.id;
+                //         forColorVariant = addProduct1Color;
+                //         console.log('addProduct1', addProduct1Color);
+                //     }
+                //     else{
+                //         let addProduct1Color = tag.previousSibling.id;
+                //         forColorVariant = addProduct1Color;
+                //     }
+                //     // let parent = tag.parentNode
+                //     console.log("tag is = ", parent, tag, num);
+                // }
+                // console.log("forColorVariant", forColorVariant);
+                // let addProduct1 = document.getElementById('addProduct1');
+                // let addProduct1Color = addProduct1.lastChild.previousSibling;
+                // if ( !addProduct1Color.hasAttribute("onclick")) {
+                // addProduct1Color.setAttribute("onclick", "dynamicDropdown(this, null)")
 
-        <!-- Jquery Min JS -->
-        <!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
-        <script src="/assets/js/others/jquery.min.js"></script>
-        <script src="/assets/js/others/inventory.js"></script>
-        <!-- Bootstrap Bundle Min JS -->
-        <script src="/assets/js/others/bootstrap.bundle.min.js"></script>
-
-        <!-- select2 js file -->
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-        <script id="select2_script">
-            // let forColorVariant;
-            // let forSizeVariant;
-            // const dynamicDropdown = (tag, num) =>{
-            //     if (num) {
-            //         let addProduct1Color = tag.previousSibling.id;
-            //         forColorVariant = addProduct1Color;
-            //         console.log('addProduct1', addProduct1Color);
-            //     }
-            //     else{
-            //         let addProduct1Color = tag.previousSibling.id;
-            //         forColorVariant = addProduct1Color;
-            //     }
-            //     // let parent = tag.parentNode
-            //     console.log("tag is = ", parent, tag, num);
-            // }
-            // console.log("forColorVariant", forColorVariant);
-            // let addProduct1 = document.getElementById('addProduct1');
-            // let addProduct1Color = addProduct1.lastChild.previousSibling;
-            // if ( !addProduct1Color.hasAttribute("onclick")) {
-            // addProduct1Color.setAttribute("onclick", "dynamicDropdown(this, null)")
-
-            // }
-            // console.log('addProduct1', addProduct1, addProduct1Color);
+                // }
+                // console.log('addProduct1', addProduct1, addProduct1Color);
 
 
 
 
-            // const dynamicDropdown = (tag, num) =>{
-            //     console.log("tag is the =", tag);
-            //     let forColorVariant;
-            //     let forSizeVariant;
+                // const dynamicDropdown = (tag, num) =>{
+                //     console.log("tag is the =", tag);
+                //     let forColorVariant;
+                //     let forSizeVariant;
 
-            //     if (num) {
-            //         let addProduct1Color = tag.id;
-            //         forColorVariant = addProduct1Color;
-            //         console.log('id is here 1', addProduct1Color);
-            //     }
-            //     else{
-            //         let addProduct1Color = tag.id;
-            //         forColorVariant = addProduct1Color;
-            //         console.log('id is here 2', addProduct1Color);
-            //     }
-            //     console.log('forColorVariant',forColorVariant);
-            // }
+                //     if (num) {
+                //         let addProduct1Color = tag.id;
+                //         forColorVariant = addProduct1Color;
+                //         console.log('id is here 1', addProduct1Color);
+                //     }
+                //     else{
+                //         let addProduct1Color = tag.id;
+                //         forColorVariant = addProduct1Color;
+                //         console.log('id is here 2', addProduct1Color);
+                //     }
+                //     console.log('forColorVariant',forColorVariant);
+                // }
 
-            $(document).ready(function () {
-                // Target the select element with its ID "color_variant"
-                var selectElement = $(`#color_variant`);
-                // Set the desired padding value (e.g., 10 pixels)
-                var paddingValue = "10px";
-                // Set the padding using jQuery's css() method
-                selectElement.css("padding", paddingValue);
-            });
-
-            $(`#color_variant`).select2({
-                tags: true,
-                tokenSeparators: [',', ' '],
-                dropdownParent: $('#addProduct1'),
-                placeholder: "Select Product Color",
-                allowClear: true
-            });
-            $("#size_variant").select2({
-                tags: true,
-                tokenSeparators: [',', ' '],
-                dropdownParent: $('#addProduct2'),
-                placeholder: "Select Product Size",
-                allowClear: true
-            });
-
-            $("#custom_variant").select2({
-                tags: true,
-                tokenSeparators: [',', ' '],
-                dropdownParent: $('#addProduct3'),
-                placeholder: "Select Product Attributes",
-                allowClear: true
-            });
-            // $(".my-select2").select2({
-            //     tags: true,
-            //     tokenSeparators: [',', ' '],
-            //     dropdownParent: $('.addProduct___'),
-            //     placeholder: "Select Product Attributes",
-            //     allowClear: true
-            // });
-
-
-            // dynamicDropdown(addProduct1Color, null)
-        </script>
-        <script>
-            //     const dynamicDropdown = (tag, num) =>{
-            //         let forColorVariant;
-            //         let forSizeVariant;
-            //         if (num) {
-            //             let addProduct1Color = tag.previousSibling.id;
-            //             forColorVariant = addProduct1Color;
-            //             console.log('addProduct1', addProduct1Color);
-            //         }
-            //         else
-            //             break
-            //             // let addProduct1Color = tag.previousSibling.id;
-            //             // forColorVariant = addProduct1Color;
-            //         // }
-            //         // let parent = tag.parentNode
-            //         console.log("tag is = ", tag, num);
-
-            //     console.log("forColorVariant", forColorVariant);
-
-            //     $(document).ready(function() {
-            //         // Target the select element with its ID "color_variant"
-            //         var selectElement = $(`#${forColorVariant}`);
-            //         // Set the desired padding value (e.g., 10 pixels)
-            //         var paddingValue = "10px";
-            //         // Set the padding using jQuery's css() method
-            //         selectElement.css("padding", paddingValue);
-            //     });
-
-            //     $(`#${forColorVariant}`).select2({
-            //         tags: true,
-            //         tokenSeparators: [',', ' '],
-            //         dropdownParent: $('#addProduct1'),
-            //         placeholder: "Select Product Color",
-            //         allowClear: true
-            //     });
-            //     $("#size_variant").select2({
-            //         tags: true,
-            //         tokenSeparators: [',', ' '],
-            //         dropdownParent: $('#addProduct2'),
-            //         placeholder: "Select Product Size",
-            //         allowClear: true
-            //     });
-
-            //     $("#custom_variant").select2({
-            //         tags: true,
-            //         tokenSeparators: [',', ' '],
-            //         dropdownParent: $('#addProduct3'),
-            //         placeholder: "Select Product Attributes",
-            //         allowClear: true
-            //     });
-            //     // $(".my-select2").select2({
-            //     //     tags: true,
-            //     //     tokenSeparators: [',', ' '],
-            //     //     dropdownParent: $('.addProduct___'),
-            //     //     placeholder: "Select Product Attributes",
-            //     //     allowClear: true
-            //     // });
-            // }
-        </script>
-
-        <script>
-            let ulTag;
-            let input;
-            let dropdownBox;
-            let varientRemove = 0;
-
-            let tags = [];
-            let colorTags = [];
-            let SizeTags = [];
-
-            let oldColorDropdown = '';
-            let dropdownOldTag = ''
-            const showColorDropDown = (tag) => {
-                dropdownBox = tag.parentNode.children[1];
-                ulTag = tag;
-                if (oldColorDropdown && !oldColorDropdown.classList.contains('d-none') && dropdownOldTag != tag) {
-                    console.log("inside the if conditon ", oldColorDropdown, !oldColorDropdown.classList.contains('d-none'));
-                    oldColorDropdown.classList.add('d-none');
-                }
-
-                input = tag.querySelector("input");
-                dropdownBox.classList.toggle("d-none");
-                dropdownOldTag = tag;
-                oldColorDropdown = dropdownBox;
-            }
-            const showVarientBox = (tag) => {
-                ulTag = tag;
-                console.log("remove tag from show varient");
-                varientRemove = 1;
-                input = tag.querySelector("input");
-            }
-
-
-            const getValueFronDropDown = (tag) => {
-                ulTag = tag.parentNode.parentNode.parentNode.children[0];
-                let value = tag.innerText;
-                let li = ulTag.children.length
-                tags = [];
-                if (ulTag.children.length > 1) {
-                    ulTag.querySelectorAll("li").forEach(li => {
-                        tags.push(li.innerText)
-                    });
-                }
-                tags.push(value);
-                createTag(ulTag);
-                tag.style.backgroundColor = "#f0f0f0"
-                tag.style.color = "#888"
-                tag.style.cursor = "not-allowed";
-                tag.style.pointerEvents = "none"
-                dropdownBox.classList.add("d-none");
-            }
-
-
-
-            function createTag(ulTag) {
-                ulTag.querySelectorAll("li").forEach(li => li.remove());
-                tags.slice().reverse().forEach(tag => {
-                    let liTag = `<li>${tag} <i class="fa-solid fa-xmark" onclick="remove(this, '${tag}')"></i></li>`;
-                    ulTag.insertAdjacentHTML("afterbegin", liTag);
+                $(document).ready(function () {
+                    // Target the select element with its ID "color_variant"
+                    var selectElement = $(`#color_variant`);
+                    // Set the desired padding value (e.g., 10 pixels)
+                    var paddingValue = "10px";
+                    // Set the padding using jQuery's css() method
+                    selectElement.css("padding", paddingValue);
                 });
 
-            }
-            const enableLiTag = (tag, value) => {
-                console.log("test space value == ", `"${value}"`);
-                let liText = "";
-                if (value.endsWith(" ")) {
-                    value = value.slice(0, -1);
-                }
-                console.log("test space liText == ", tag, `'${value}'`);
-                let dropdownLi = tag.querySelectorAll("li");
-                $(dropdownLi).each(function (index, element) {
-                    if (element.innerText.endsWith(" ")) {
-                        let elementInnerText = element.innerText.slice(0, -1);
-                        if (elementInnerText == value) {
-                            element.style.removeProperty("background-color");
-                            element.style.removeProperty("color");
-                            element.style.removeProperty("cursor");
-                            element.style.removeProperty("pointer-events");
-                        }
-                    } else {
-                        if (element.innerText == value) {
-                            element.style.removeProperty("background-color");
-                            element.style.removeProperty("color");
-                            element.style.removeProperty("cursor");
-                            element.style.removeProperty("pointer-events");
+                $(`#color_variant`).select2({
+                    tags: true,
+                    tokenSeparators: [',', ' '],
+                    dropdownParent: $('#addProduct1'),
+                    placeholder: "Select Product Color",
+                    allowClear: true
+                });
+                $("#size_variant").select2({
+                    tags: true,
+                    tokenSeparators: [',', ' '],
+                    dropdownParent: $('#addProduct2'),
+                    placeholder: "Select Product Size",
+                    allowClear: true
+                });
 
-                        }
+                $("#custom_variant").select2({
+                    tags: true,
+                    tokenSeparators: [',', ' '],
+                    dropdownParent: $('#addProduct3'),
+                    placeholder: "Select Product Attributes",
+                    allowClear: true
+                });
+                // $(".my-select2").select2({
+                //     tags: true,
+                //     tokenSeparators: [',', ' '],
+                //     dropdownParent: $('.addProduct___'),
+                //     placeholder: "Select Product Attributes",
+                //     allowClear: true
+                // });
+
+
+                // dynamicDropdown(addProduct1Color, null)
+            </script>
+            <script>
+                //     const dynamicDropdown = (tag, num) =>{
+                //         let forColorVariant;
+                //         let forSizeVariant;
+                //         if (num) {
+                //             let addProduct1Color = tag.previousSibling.id;
+                //             forColorVariant = addProduct1Color;
+                //             console.log('addProduct1', addProduct1Color);
+                //         }
+                //         else
+                //             break
+                //             // let addProduct1Color = tag.previousSibling.id;
+                //             // forColorVariant = addProduct1Color;
+                //         // }
+                //         // let parent = tag.parentNode
+                //         console.log("tag is = ", tag, num);
+
+                //     console.log("forColorVariant", forColorVariant);
+
+                //     $(document).ready(function() {
+                //         // Target the select element with its ID "color_variant"
+                //         var selectElement = $(`#${forColorVariant}`);
+                //         // Set the desired padding value (e.g., 10 pixels)
+                //         var paddingValue = "10px";
+                //         // Set the padding using jQuery's css() method
+                //         selectElement.css("padding", paddingValue);
+                //     });
+
+                //     $(`#${forColorVariant}`).select2({
+                //         tags: true,
+                //         tokenSeparators: [',', ' '],
+                //         dropdownParent: $('#addProduct1'),
+                //         placeholder: "Select Product Color",
+                //         allowClear: true
+                //     });
+                //     $("#size_variant").select2({
+                //         tags: true,
+                //         tokenSeparators: [',', ' '],
+                //         dropdownParent: $('#addProduct2'),
+                //         placeholder: "Select Product Size",
+                //         allowClear: true
+                //     });
+
+                //     $("#custom_variant").select2({
+                //         tags: true,
+                //         tokenSeparators: [',', ' '],
+                //         dropdownParent: $('#addProduct3'),
+                //         placeholder: "Select Product Attributes",
+                //         allowClear: true
+                //     });
+                //     // $(".my-select2").select2({
+                //     //     tags: true,
+                //     //     tokenSeparators: [',', ' '],
+                //     //     dropdownParent: $('.addProduct___'),
+                //     //     placeholder: "Select Product Attributes",
+                //     //     allowClear: true
+                //     // });
+                // }
+            </script>
+
+            <script>
+                let ulTag;
+                let input;
+                let dropdownBox;
+                let varientRemove = 0;
+
+                let tags = [];
+                let colorTags = [];
+                let SizeTags = [];
+
+                let oldColorDropdown = '';
+                let dropdownOldTag = ''
+                const showColorDropDown = (tag) => {
+                    dropdownBox = tag.parentNode.children[1];
+                    ulTag = tag;
+                    if (oldColorDropdown && !oldColorDropdown.classList.contains('d-none') && dropdownOldTag != tag) {
+                        console.log("inside the if conditon ", oldColorDropdown, !oldColorDropdown.classList.contains('d-none'));
+                        oldColorDropdown.classList.add('d-none');
                     }
 
+                    input = tag.querySelector("input");
+                    dropdownBox.classList.toggle("d-none");
+                    dropdownOldTag = tag;
+                    oldColorDropdown = dropdownBox;
+                }
+                const showVarientBox = (tag) => {
+                    ulTag = tag;
+                    console.log("remove tag from show varient");
+                    varientRemove = 1;
+                    input = tag.querySelector("input");
+                }
+
+
+                const getValueFronDropDown = (tag) => {
+                    ulTag = tag.parentNode.parentNode.parentNode.children[0];
+                    let value = tag.innerText;
+                    let li = ulTag.children.length
+                    tags = [];
+                    if (ulTag.children.length > 1) {
+                        ulTag.querySelectorAll("li").forEach(li => {
+                            tags.push(li.innerText)
+                        });
+                    }
+                    tags.push(value);
+                    createTag(ulTag);
+                    tag.style.backgroundColor = "#f0f0f0"
+                    tag.style.color = "#888"
+                    tag.style.cursor = "not-allowed";
+                    tag.style.pointerEvents = "none"
+                    dropdownBox.classList.add("d-none");
+                }
 
 
 
-                })
-            }
+                function createTag(ulTag) {
+                    ulTag.querySelectorAll("li").forEach(li => li.remove());
+                    tags.slice().reverse().forEach(tag => {
+                        let liTag = `<li>${tag} <i class="fa-solid fa-xmark" onclick="remove(this, '${tag}')"></i></li>`;
+                        ulTag.insertAdjacentHTML("afterbegin", liTag);
+                    });
 
-            function remove(element, tag) {
-                // if (varientRemove == 1) {
-                //     let index  = tags.indexOf(tag);
-                //     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
-                //     element.parentElement.remove();
-                //     varientRemove = 0;
-                // }
-                // else{
-                let dropdownUl = element.parentNode.parentNode.parentNode.children[1].children[0];
-                enableLiTag(dropdownUl, tag);
-
-                let index = tags.indexOf(tag);
-                tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
-                element.parentElement.remove();
-                // }
-            }
-
-            function addTag(e) {
-                let inputParent = e.target.parentNode;
-                let allInput = inputParent.querySelectorAll("input")
-                for (let i = 0; i < allInput.length; i++) {
-                    if (allInput[i].classList.contains('tagIntpus')) {
-                        if (e.key == "Enter" || e.keyCode == 32) {
-                            if (dropdownBox) {
-                                dropdownBox.classList.add("d-none");
+                }
+                const enableLiTag = (tag, value) => {
+                    console.log("test space value == ", `"${value}"`);
+                    let liText = "";
+                    if (value.endsWith(" ")) {
+                        value = value.slice(0, -1);
+                    }
+                    console.log("test space liText == ", tag, `'${value}'`);
+                    let dropdownLi = tag.querySelectorAll("li");
+                    $(dropdownLi).each(function (index, element) {
+                        if (element.innerText.endsWith(" ")) {
+                            let elementInnerText = element.innerText.slice(0, -1);
+                            if (elementInnerText == value) {
+                                element.style.removeProperty("background-color");
+                                element.style.removeProperty("color");
+                                element.style.removeProperty("cursor");
+                                element.style.removeProperty("pointer-events");
                             }
+                        } else {
+                            if (element.innerText == value) {
+                                element.style.removeProperty("background-color");
+                                element.style.removeProperty("color");
+                                element.style.removeProperty("cursor");
+                                element.style.removeProperty("pointer-events");
 
-                            tags = [];
-                            let tag = e.target.value.replace(/\s+/g, ' ');
-                            let allText = e.target.value.replace(/\s+/g, ' ');
-                            if (tag.length > 1 && !tags.includes(tag)) {
-                                console.log("tag tag ", ulTag);
-                                if (tags.length < 10) {
-                                    if (ulTag.children.length > 1) {
-                                        ulTag.querySelectorAll("li").forEach(li => {
-                                            li = li.innerText.split(" ")
-                                            tags.push(li[0])
+                            }
+                        }
+
+
+
+
+                    })
+                }
+
+                function remove(element, tag) {
+                    // if (varientRemove == 1) {
+                    //     let index  = tags.indexOf(tag);
+                    //     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+                    //     element.parentElement.remove();
+                    //     varientRemove = 0;
+                    // }
+                    // else{
+                    let dropdownUl = element.parentNode.parentNode.parentNode.children[1].children[0];
+                    enableLiTag(dropdownUl, tag);
+
+                    let index = tags.indexOf(tag);
+                    tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+                    element.parentElement.remove();
+                    // }
+                }
+
+                function addTag(e) {
+                    let inputParent = e.target.parentNode;
+                    let allInput = inputParent.querySelectorAll("input")
+                    for (let i = 0; i < allInput.length; i++) {
+                        if (allInput[i].classList.contains('tagIntpus')) {
+                            if (e.key == "Enter" || e.keyCode == 32) {
+                                if (dropdownBox) {
+                                    dropdownBox.classList.add("d-none");
+                                }
+
+                                tags = [];
+                                let tag = e.target.value.replace(/\s+/g, ' ');
+                                let allText = e.target.value.replace(/\s+/g, ' ');
+                                if (tag.length > 1 && !tags.includes(tag)) {
+                                    console.log("tag tag ", ulTag);
+                                    if (tags.length < 10) {
+                                        if (ulTag.children.length > 1) {
+                                            ulTag.querySelectorAll("li").forEach(li => {
+                                                li = li.innerText.split(" ")
+                                                tags.push(li[0])
+                                            });
+                                        }
+                                        tag.split(',' || " ").forEach(tag => {
+
+                                            tag = tag.split(' ');
+                                            if (!tags.includes(tag[0])) {
+                                                tags.push(tag[0])
+                                            }
+
+                                            else {
+                                                e.target.value = "";
+                                            }
+                                            console.log("log from split = ", tags, tag);
+                                            createTag(ulTag);
                                         });
                                     }
-                                    tag.split(',' || " ").forEach(tag => {
-
-                                        tag = tag.split(' ');
-                                        if (!tags.includes(tag[0])) {
-                                            tags.push(tag[0])
-                                        }
-
-                                        else {
-                                            e.target.value = "";
-                                        }
-                                        console.log("log from split = ", tags, tag);
-                                        createTag(ulTag);
-                                    });
                                 }
+                                e.target.value = "";
                             }
-                            e.target.value = "";
                         }
+
                     }
-
                 }
-            }
-            document.addEventListener("keyup", addTag)
-        </script>
+                document.addEventListener("keyup", addTag)
+            </script>
 
-        <script>
-            const pageNotReload = (e) => {
-                e.preventDefault();
-            }
-        </script>
+            <script>
+                const pageNotReload = (e) => {
+                    e.preventDefault();
+                }
+             </script>
 
 </body>
 
