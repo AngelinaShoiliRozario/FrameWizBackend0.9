@@ -1,5 +1,5 @@
 const express = require('express');
-const { productCategory,addProductView,orderListView,editProductView, productListView,createProduct,getProductByUserId_TemplateId,postEditProduct } = require('../controllers/productController');
+const {deleteProduct, productCategory,addProductView,orderListView,editProductView, productListView,createProduct,getProductByUserId_TemplateId,postEditProduct } = require('../controllers/productController');
 const router = express.Router();
 const uploadIMG = require('../config/img_up_multer');
 
@@ -26,6 +26,7 @@ router.post('/:user_id/:template_id/edit_product/:product_id',upload.fields([
   { name: 'primary_image', maxCount: 1 }, 
   { name: 'secondary_images', maxCount: 5 }  
 ]), postEditProduct);
+router.get('/:user_id/:template_id/delete_product/:product_id', deleteProduct);
 
 
 module.exports = router;

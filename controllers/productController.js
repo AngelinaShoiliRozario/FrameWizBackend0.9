@@ -318,6 +318,38 @@ const postEditProduct = async (req, res) => {
   }
 };
 
+// delete service method
+const deleteProduct = async (req, res) => {
+  const { user_id, template_id, product_id } = req.params;
+
+  const productObjectId = new ObjectId(product_id);
+
+
+  let product_collection = `product_table_of_user_${user_id}_template_${template_id}`;
+  const product_table = mongoose.connection.collection(product_collection);
+
+  let delete_one_record_from_productTable = await product_table.deleteOne({ _id: serviceObjectId });
+
+  try {
+
+    if (delete_one_record_from_productTable.deletedCount === 1) {
+    
+      res.redirect(`../product_list`);
+
+    }
+    else {
+      console.log('Not Deleted');
+
+    }
+  }
+
+  catch (err) {
+    console.log(err);
+
+  }
+}
+
+
 module.exports = {
   addProductView,
   orderListView,
@@ -327,4 +359,5 @@ module.exports = {
   productCategory,
   editProductView,
   postEditProduct,
+  deleteProduct
 };
