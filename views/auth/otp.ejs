@@ -228,7 +228,8 @@
 <body>
 
   <div class="login-page bg-light">
-    <div class="container bg-white  ps-4 pt-4 pb-4 pe-4 bg_whitee containerr" style="width:90%;min-height:430px;border-radius:10px;">
+    <!-- width:90%;min-height:430px; -->
+    <div class="container bg-white  ps-4 pt-4 pb-4 pe-4 bg_whitee containerr" style="border-radius:10px;">
 
       <div class="d-flex justify-content-between Esmall_device ch1">
         <div class="logo ">
@@ -286,7 +287,7 @@
             <input type="text" name="otp" id="otp" style="display:none;">
 
             <div class="text-center my-4">
-              <p>Didn't receive the code? <span style="color: #6499FF;;"> <a href="/resend/<%=id%>" style="text-decoration: none;"><b>RESEND</b></a> </span></p>
+              <p>Didn't receive the code? <span style="color: #6499FF;;"> <a href="/auth/resend/<%=id%>" style="text-decoration: none;"><b>RESEND</b></a> </span></p>
             </div>
 
             <div class="mt-5">

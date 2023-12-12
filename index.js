@@ -108,9 +108,9 @@ app.use('/user',require('./routes/userRoutes'));
 // });
 // app.use("/", buttonRoutes); // GET all products
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
 
-const httpsServer = https.createServer(cred, app)
-httpsServer.listen(8443);
+// const httpsServer = https.createServer(cred, app)
+// httpsServer.listen(8443);

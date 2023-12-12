@@ -14,7 +14,6 @@
 
     <style>
         * {
-
             @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,400&display=swap');
             font-family: 'Poppins', sans-serif;
         }
@@ -63,7 +62,9 @@
             border-color: dodgerBlue;
             box-shadow: 0 0 8px 0 dodgerBlue;
         }
-
+        input[type='password']::placeholder {
+            color: #808080 !important;
+        }
         .inputWithIcon input[type="text"] {
             padding-left: 10px;
         }
@@ -222,7 +223,7 @@
 
 
     <div class="login-page bg-light">
-        <div class="container bg-white  bg_whitee ps-4 pt-4 pe-4 pb-0" style="width:70%;border-radius:10px; ;">
+        <div class="container bg-white  bg_whitee ps-4 pt-4 pe-4 pb-0" style="border-radius:10px; ;">
 
 
             <div class="d-flex align-items-center justify-content-between Esmall_device ch1">
@@ -322,3 +323,41 @@
 </body>
 
 </html>
+
+<!-- for microsoft edge js -->
+    <!-- <script>
+    function viewPassword() {
+        var passwordInput = document.getElementById('password-field');
+        var passStatus = document.getElementById('pass-status');
+
+        if (passwordInput.type == 'password') {
+            passwordInput.setAttribute('type', 'text');
+            passStatus.classList.remove('  fa fa-eye ');
+            passStatus.classList.add(' fa fa-eye-slash ');
+
+        } else {
+            passwordInput.setAttribute('type', 'password');
+            passStatus.classList.remove(' fa-eye-slash  ');
+            passStatus.classList.add('fa-eye');
+        }
+    }
+
+
+    function viewPassword1() {
+        var passwordInput1 = document.getElementById('password-field1');
+        var passStatus1 = document.getElementById('pass-status1');
+
+        if (passwordInput1.type == 'password') {
+            passwordInput.setAttribute('type', 'text');
+            passStatus1.classList.remove('fa fa-eye');
+            passStatus1.classList.add('fa fa-eye-slash ');
+
+        } else {
+            // passwordInput1.type = 'password';
+            passwordInput1.setAttribute('type', 'password');
+            passStatus1.classList.remove('fa fa-eye-slash');
+            passStatus1.classList.add('fa-eye');
+        }
+    }
+
+</script> -->
