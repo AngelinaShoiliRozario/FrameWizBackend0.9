@@ -1,0 +1,184 @@
+body{
+    height: 100vh;
+}
+.gutter{
+    height: 100%;
+    background: rgb(181, 187, 194);
+    cursor: e-resize;
+}
+.navbar{
+    border-radius:0 !important;
+}
+.navbar{
+    margin : 0 !important; 
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+a:hover{
+    border-color: #337ab7;
+}
+.navbar-nav>li>.dropdown-menu{
+    background-color: black;
+}
+.dropdown-menu>li>a  {
+    color: white;
+}
+.navbar #inputName1{
+    background-color: #222222;
+    color: white;
+    border-color: white;
+}
+.navbar #inputName1::placeholder {
+    color: #ffffff;
+}
+.navbar .optionBox{
+    padding: 10px;
+}
+.navbar #selectOption{
+    padding: 10px;
+    width: 180px;
+    background-color: #222222;
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+}
+.navbar #selectOption:focus{
+    border: 2px solid tomato;
+}
+
+
+
+
+
+
+.navbar .imageUploadPreview{
+    padding: 5px;
+}
+.avatar-upload {
+    position: relative;
+    width: 70px ;
+    height: 50px ;
+    /* margin: 50px auto; */
+    /* border: 1px solid tomato; */
+}
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: -1px;
+    z-index: 1;
+    top: 0;
+}
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+.avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    margin-bottom: 0;
+    background: #ffffff00;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+    background: #ffffff0c;
+    border-color: #d6d6d6;
+}
+.avatar-upload .avatar-preview {
+    width: 70px;
+    height: 50px;
+    position: relative;
+}
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+  .avatar-upload .avatar-edit input + label:hover::before {
+    content: "Upload your image.";
+    position: absolute;
+    top: 55px;
+    /* left: 0px; */
+    right: -80px;
+    background-color: #fffefe;
+    color: #292929;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+  } 
+  
+
+
+
+
+
+
+
+
+
+
+.editor{
+    width: 100%;
+    height: 97%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background: rgb(41, 40, 40);
+}
+.code{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border: 1px solid;
+}
+.editor .code iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: white;
+    
+}
+@media (max-width: 601px) {
+    .navbar .imageUploadPreview{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .nameInput{
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .navbar #inputName1{
+        width: 200px;
+    }
+    .navbar .optionBox{
+        text-align: center;
+    }
+    .navbar .optionBox #selectOption{
+        width: 200px;
+    }
+    .editor{
+        flex-direction: column;
+    }
+    #resizeMe{
+        width: 100% !important;
+        padding: 10px;
+        overflow: hidden;
+    }
+    .gutter{
+        height: 10px;
+        width: 100% !important;
+        /* background: rgb(181, 187, 194); */
+        cursor: n-resize;
+    }
+    #previewBox{
+        width: 100% !important;
+        padding: 10px;
+    }
+  }

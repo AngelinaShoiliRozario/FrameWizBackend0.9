@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* search button in nav css */
+.search-container {
+    width: 300px;
+}
+
+.my-form-control {
+    background-color: #EBEBEB;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 100% !important;
+}
+
+.form-control-custom {
+    outline: none;
+    border: none;
+    color: #242945;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    margin-top: 7px;
+    padding: 10px;
+
+}
+
+input#search-bar:focus {
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+}
+
+input#search-bar:focus::-webkit-input-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+input#search-bar:focus::-moz-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+input#search-bar:focus:-ms-placeholder {
+    transition: opacity 0.45s ease;
+    opacity: 0;
+}
+
+.checking_input:checked~.pa_list {
+    background: #5F5F5F;
+
+}
+
+.ch_list {
+    display: none;
+}
+
+.move_icon {
+    transform: rotate(180deg);
+}
+
+.checking_input:checked~.ch_list {
+    display: block;
+}
+
+.checking_input:checked~.pa_list .move_icon {
+
+    transform: rotate(0deg);
+}
+
+.yy:hover {
+    background: #5F5F5F;
+}
+/* omar vaiya css */
+.myInput:focus {
+    border: none;
+    /* border-bottom: 0.3px solid red !important; */
+}
+
+.image_2nd_upload_label::after {
+    top: 17px !important;
+}
+
+.select2-selection--multiple {
+    padding-top: 8px !important;
+    min-height: 50px !important;
+}
+
+/* for route active */
+.route-active{
+    background-color: #0d6efd!important;
+}
+.route-active-parent{
+    display: block !important;
+}
+
+.txtt {
+    font-size: 14px;
+}
+
