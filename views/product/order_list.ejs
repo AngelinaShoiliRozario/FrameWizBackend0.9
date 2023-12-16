@@ -599,7 +599,7 @@
 
                 </div>
 
-                <table id="example" class="table display" style="width:100%;">
+                <table id="example" class="table display" style="width:100%;table-layout: fixed;">
 
                     <thead>
                         <tr class="align-middle">
@@ -873,8 +873,8 @@
     <script>
         let oTable = $('#example').DataTable({
             paging: true,
-            scrollCollapse: false,
-            scrollY: '55vh'
+            
+            
         });
 
         //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
