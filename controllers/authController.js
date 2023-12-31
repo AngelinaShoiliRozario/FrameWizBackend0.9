@@ -1,14 +1,14 @@
 const crypto = require("crypto"); // for encryption/decryption
 const bcrypt = require("bcrypt"); //hashing pin
+const passport = require("passport");
+
 
 const asyncHandler = require("express-async-handler");
-//userModel import using require() method
+
 const User = require("../models/authModel");
 
-// these four file have to import for otp generation
 const axios = require("axios");
 const bodyParser = require("body-parser");
-
 
 // step1 signUp route
 const signUp = asyncHandler((req, res) => {
@@ -55,7 +55,6 @@ const sendOtp = async (req, res) => {
       password,
       pin,
       reset_pin,
-    
     });
     try {
       const savedUser = await newUser.save();
@@ -73,7 +72,7 @@ const sendOtp = async (req, res) => {
           url: "https://api.sms.net.bd/sendsms",
           formData: {
             api_key: app_key,
-            msg:`Your Framewiz OTP Number: ${otpp}`,
+            msg: `Your Framewiz OTP Number: ${otpp}`,
             to: userr.mobile,
           },
         };
@@ -212,7 +211,7 @@ const tobView = async (req, res) => {
 };
 
 const postTob = async (req, res) => {
-  const { business,company } = req.body;
+  const { business, company } = req.body;
   console.log(company);
   // const business=req.body.business; //two ways to get one data
   // console.log("post Tob view ", req.params.id);
@@ -272,8 +271,10 @@ const postLocation = async (req, res) => {
 };
 
 const dashboard = async (req, res) => {
-  let {user_id} = req.params;
-  res.redirect(`https://phpstack-858192-4120901.cloudwaysapps.com/views/pages.html?u=${user_id}`);
+  let { user_id } = req.params;
+  res.redirect(
+    `https://phpstack-858192-4120901.cloudwaysapps.com/views/pages.html?u=${user_id}`
+  );
 };
 
 const login = async (req, res) => {
@@ -458,6 +459,19 @@ const resend = async (req, res) => {
   });
 };
 
+const facebook = passport.authenticate("facebook");
+
+const facebookCallback = passport.authenticate("facebook", { failureRedirect: "/auth/login" });
+
+
+const google = passport.authenticate("google", { scope: ["profile"] });
+ 
+const googleCallback = passport.authenticate("google", {
+  failureRedirect: "/auth/login"
+});
+
+
+
 module.exports = {
   signUp,
   sendOtp,
@@ -479,4 +493,8 @@ module.exports = {
   resetPin,
   postResetPin,
   resend,
+  facebook,
+  facebookCallback,
+  google,
+  googleCallback,
 };

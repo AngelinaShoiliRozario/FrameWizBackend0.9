@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { signUp, sendOtp, otpView, postOtp, tobView, postTob,
     locationView, postLocation, pinView, postPin, dashboard, login, postLogin,
-    forgottenPassword, postForgottenPassword, furtherOtp, postFurtherOtp, resetPin, postResetPin, resend } = require('../controllers/authController');
+    forgottenPassword, postForgottenPassword, furtherOtp, postFurtherOtp, resetPin, postResetPin, resend, facebook, facebookCallback, google, googleCallback } = require('../controllers/authController');
+
+
 
 // if we have same route but different controller then we can alo use this way
 // router.route('/').get(getGoal).post(setGoal);
@@ -42,6 +44,31 @@ router.get('/resend/:id', resend); //step: 1 resend pin // go to step 4
 
 
 router.get('/dashboard/:user_id', dashboard);
+
+
+router.get('/facebook',facebook);
+router.get('/facebook/callback',facebookCallback, (req, res) => {
+    try {
+    let user = req.session.passport.user;
+    console.log("user: ", user);
+    res.redirect("/dashboard");
+    }catch (e) {
+        console.log(e.message);
+        res.redirect("/auth/login");
+    }
+});
+
+router.get('/google',google);
+router.get('/google/callback',googleCallback, (req,res) => {
+    try {
+        let user = req.session.passport.user;
+        console.log("user: ", user);
+        res.redirect("/dashboard");
+      } catch (err) {
+        console.log(err.message);
+        res.redirect("/auth/login"); // Handle errors by redirecting to the login page
+      }
+});
 
 
 module.exports = router;

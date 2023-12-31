@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 const express = require("express");
 const app = express();
@@ -9,22 +8,45 @@ const flash = require('connect-flash');
 const https = require('https');
 const path = require('path');
 const fs = require('fs');
+const passport = require("passport");
+const {  facebook, facebookCallback, google, googleCallback } = require('./controllers/authController');
+
+
+require("dotenv").config();
+require("./config/passport-facebook");
+require("./config/passport-google");
 
 const key = fs.readFileSync('private.key');
 const cert = fs.readFileSync('certificate.crt');
 let ca = fs.readFileSync('ca_bundle.crt');
 
-const Goal = require("./models/goalModel");
 
 // const buttonRoutes = require("./routes/buttonRoutes");
 const connectDB = require('./config/db');
-// const buttonModel = require("./models/buttonModel");
 
 const cred = {
   key,
   cert, ca
-
 }
+
+// passport session middleware start
+app.use(
+  session({
+    secret: "your-secret-key", // Replace with a strong secret
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+passport.serializeUser(function (user, cb) {
+  cb(null, user);
+});
+passport.deserializeUser(function (obj, cb) {
+  cb(null, obj);
+});
+app.use(passport.initialize());
+app.use(passport.session());
+// passport session middleware end
+
 
 app.use(express.static('public'));
 app.use(express.static('assets'));
@@ -32,6 +54,7 @@ const corsOptions = {
   origin: ['https://phpstack-858192-4120901.cloudwaysapps.com/', 'https://phpstack-858192-4120901.cloudwaysapps.com/pagebuilderztrios'],
 };
 app.use(cors({corsOptions}));
+
 
 
 
@@ -77,6 +100,52 @@ app.use('/inventory',require('./routes/productRoutes'));
 app.use('/service',require('./routes/serviceRoutes'));
 app.use('/user',require('./routes/userRoutes'));
 
+
+// app.get("/auth/facebook", passport.authenticate("facebook"));
+
+// app.get(
+//   "/auth/facebook/callback",
+//   passport.authenticate("facebook", { failureRedirect: "/login" }),
+//   function (req, res) {
+//     //sucessful Redirect
+//     let user = req.session.passport.user;
+//     console.log("user: ", user);
+//     res.redirect("/success");
+//   }
+// );
+
+// app.get(
+//   "/auth/google",
+//   google
+// );
+
+// app.get(
+//   "/auth/google/callback",
+//   passport.authenticate("google", { failureRedirect: "/login" }),
+//   function (req, res) {
+//     let user = req.session.passport.user;
+//     console.log("user: ", user);
+//     res.redirect("/success");
+//   }
+// );
+
+app.get("/success", function (req, res) {
+  let user = req.session.passport.user;
+  console.log("success user: ", user);
+  res.send(user.id);
+});
+app.get("/signout", function (req, res) {
+  try {
+    req.session.destroy(function (err) {
+      console.log("session destroyed");
+    });
+    res.redirect("/login");
+  } catch (err) {
+    console.log("error: ", err);
+  }
+});
+
+
 // routes
 // app.post("/post_btn_data", upload.single("btn_img"), (req, res) => {
  
@@ -108,7 +177,7 @@ app.use('/user',require('./routes/userRoutes'));
 // });
 // app.use("/", buttonRoutes); // GET all products
 
-// app.listen(port, () => {
+// app.listen(3000, () => {
 //   console.log(`Example app listening on port ${port}`);
 // });
 
