@@ -151,10 +151,8 @@ const otpView = async (req, res) => {
 const postOtp = async (req, res) => {
   const ottp = req.body.otp;
   // console.log(ottp);
-
   try {
-    const One_user = await User.findOne({ otp: ottp }); //finding one single record from the database User table
-
+    const One_user = await User.findOne({ otp: ottp, _id: req.params.id }); //finding one single record from the database User table
     if (One_user) {
       res.redirect(`/auth/pin/${One_user._id}`);
     } else {
@@ -459,13 +457,13 @@ const resend = async (req, res) => {
   });
 };
 
-const facebook = passport.authenticate("facebook");
+const facebook = passport.authenticate("facebook", { scope : ['email','public_profile'] });
 
 const facebookCallback = passport.authenticate("facebook", { failureRedirect: "/auth/login" });
 
 
-const google = passport.authenticate("google", { scope: ["profile"] });
- 
+const google = passport.authenticate("google", { scope: ["profile", 'email'] });
+
 const googleCallback = passport.authenticate("google", {
   failureRedirect: "/auth/login"
 });

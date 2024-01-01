@@ -1,85 +1,85 @@
-const mongoose = require('mongoose'); //using mongoose object we have to create model
-const userSchema = mongoose.Schema({
-
+const mongoose = require("mongoose"); //using mongoose object we have to create model
+const userSchema = mongoose.Schema(
+  {
     //signup view field
     first_name: {
-        type: String,
-        required: [true, 'Please provide your email'],
-
+      type: String,
+      required: [true, "Please provide your name"],
     },
     last_name: {
-        type: String,
-        required: [true, 'Please provide your email'],
-
+      type: String,
+      required: [true, "Please provide your name"],
     },
     user_name: {
-        type: String,
+      type: String,
     },
     //unique
     email: {
-        type: String,
-        // required: [true, 'Please provide your email'],
-        // unique: true,
-        // This makes the 'email' field unique
+      type: String,
+      required: [true, 'Please provide your email'],
+      // unique: true,
+      // This makes the 'email' field unique
     },
     //unique
     mobile: {
-        type: String,
-        required: [true, 'Enter  your name value'],
-        unique: true,
-        // validate: {
-        //     validator: function (value) {
-        //         return /^\d{11}$/.test(value); // Check if the mobile number is exactly 11 digits
-        //     },
-        //     message: 'Mobile number must be 11 digits',
-        // },
+      type: String,
+      // unique: true,
+      // validate: {
+      //     validator: function (value) {
+      //         return /^\d{11}$/.test(value); // Check if the mobile number is exactly 11 digits
+      //     },
+      //     message: 'Mobile number must be 11 digits',
+      // },
     },
 
     otp: {
-        type: Number,
+      type: Number,
     },
 
     //tob view
     type_of_business: {
-        type: String,
-        // required: [true, 'Enter  your name value'],
-
+      type: String,
+      // required: [true, 'Enter  your name value'],
     },
 
     //location view
     district: {
-        type: String,
+      type: String,
     },
     city: {
-        type: String,
+      type: String,
     },
     zip_code: {
-        type: String,
+      type: String,
     },
     road: {
-        type: String,
+      type: String,
     },
     house: {
-        type: String,
+      type: String,
     },
 
     //pin view
     password: {
-        type: String,
-        // required: [true, 'Please provide your password'],
-
+      type: String,
+      // required: [true, 'Please provide your password'],
     },
     pin: {
-        type: String,
+      type: String,
     },
     reset_pin: {
+      type: String,
+    },
+    facebookId:{
         type: String,
     },
+    googleId:{
+        type: String,
+    }
+  },
+  {
+    timestamps: true, //it6 will go as second argument
+  }
+);
 
-},
-    {
-        timestamps: true,  //it6 will go as second argument
-    });
-
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
